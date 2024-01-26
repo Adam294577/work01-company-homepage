@@ -1,0 +1,537 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>台灣客服Demo2</title>
+  <script src="./EBG/Promotion/NewHomePage/js/tailwind.js"></script> 
+
+  <style>
+    .Navdot_act{
+      width: 8px;
+      height: 8px;
+      display: inline-block;
+      background: #ff6700;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+    .Navdot{
+      cursor: pointer;
+      width: 8px;
+      height: 8px;
+      display: inline-block;
+      border-radius: 50%;
+      border: 1px solid #ff6700;
+    }
+
+    .articleBtn:hover a,.articleBtn:hover svg{
+      background: #ff6700;
+      color: #FFF;
+    }
+    .header-nav:hover span{
+      
+      background: #2d338d;
+    }
+
+
+    /* animation */
+    .animation-org-1{
+      opacity: 0.55;
+      animation-name: org-1;
+      animation-duration: 30s;
+      animation-timing-function: linear;
+      animation-fill-mode: forwards;
+      animation-iteration-count: infinite;
+    }
+    .animation-org-2{
+      opacity: 0.8;
+      animation-name: org-2;
+      animation-duration: 12s;
+      animation-timing-function: linear;
+      animation-fill-mode: forwards;
+      animation-iteration-count: infinite;
+    }
+    .animation-org-3{
+      animation-name: org-3;
+      animation-duration: 15s;
+      animation-timing-function: linear;
+      animation-fill-mode: forwards;
+      animation-iteration-count: infinite;
+    }
+    .animation-light-org-1{
+      animation-name: light-org-1;
+      animation-duration: 50s;
+      animation-timing-function: linear;
+      animation-fill-mode: forwards;
+      animation-iteration-count: infinite;
+    }
+    .animation-blue-1{
+      animation-name: blue-1;
+      animation-duration: 35s;
+      animation-timing-function: linear;
+      animation-fill-mode: forwards;
+      animation-iteration-count: infinite;
+    }
+    @keyframes org-1 {
+      0%{
+        transform: translate(-50px,-200px) rotate(0);
+      }
+      50%{
+        transform: translate(-50px,1000px) rotate(1080deg);
+      }
+      100%{
+        transform: translate(-50px,-200px) rotate(2160deg);
+      }
+    }
+    @keyframes org-2 {
+      0%{
+        transform: translate(-100px,1000px) rotate(0) scale(1);
+      }
+      33%{
+        transform: translate(200px,380px) rotate(180deg) scale(1.1);
+      }
+      100%{
+        transform: translate(200px,380px) rotate(180deg) scale(1.1);
+      }
+    }
+    @keyframes org-3 {
+      0%{
+        transform: translate(0px,-50px) rotate(0) scale(1);
+      }
+      10%{
+        transform: translate(120px,50px) rotate(-100deg) scale(1);
+      }
+      100%{
+        transform: translate(120px,50px) rotate(-100deg) scale(1);
+      }
+    }
+    @keyframes light-org-1 {
+      0%{
+        transform: translate(0px,0px) rotate(0) scale(1);
+      }
+      50%{
+        transform: translate(-10px,200px) rotate(1440deg) scale(1);
+      }
+      100%{
+        transform: translate(0px,0px) rotate(2880deg) scale(1);
+      }
+    }
+    @keyframes blue-1 {
+      0%{
+        transform: translate(0px,-100px) rotate(0) scale(1);
+      }
+      30%{
+        transform: translate(200px,500px) rotate(720deg) scale(1);
+      }
+      70%{
+        transform: translate(200px,500px) rotate(720deg) scale(1);
+      }
+      90%{
+        transform: translate(0px,-100px) rotate(1440deg) scale(1);
+      }
+      100%{
+        transform: translate(0px,-100px) rotate(1440deg) scale(1);
+      }
+    }
+    /* RWD */
+    .cont{
+      width: 90%;
+    }
+    .bgBlock{
+      height: 305px;
+    }
+    .sectionImg{
+      height: 159px;
+    }
+
+    .footerBlock{
+      height: 150px;
+    }
+    @media (min-width: 1540px) {
+      .cont{
+        width: 90%;
+      }
+
+      .bgBlock{
+        height: 385px;
+      }
+      .sectionImg{
+        height: 192px;
+      }
+      .footerBlock{
+      height: 300px;
+    }        
+      .animation-light-org-1{
+        display: none;
+      }
+
+    }
+  
+  </style>
+</head>
+<body>
+  <div id="app">
+      <div class="header pt-2 pb-2  bg-white fixed w-full z-20" >
+        <img class="absolute top-[5px] left-8" src="./EBG/Promotion/NewHomePage/img/logo.png" alt="">
+        <ul class="memu flex justify-end pt-2 mr-4">
+          <li class="text-[#2d338d] font-bold px-2 relative header-nav" >
+            <a href="/TCC/00_millieyu/ccweb_2007/other/sir/index_sir.htm" onclick="window.open(this.href,'','resizable=yes,location=no,menubar=no,scrollbars=yes,status=no,toolbar=no,fullscreen=no,dependent=no,width=860,height=760,left=60,top=90,status');return false" >
+            認識客服與大哥大長官</a>
+            <span class="absolute top-[32px] w-full inline-block h-[4px] left-0  rounded-md transition-colors duration-300"></span>
+          </li>
+          <li class="text-[#2d338d] font-bold px-2 relative header-nav" >
+            <a href="/sir/index_sir01.htm" onclick="window.open(this.href,'','resizable=yes,location=no,menubar=no,scrollbars=no,status=no,toolbar=no,fullscreen=no,dependent=no,width=991,height=362,left=60,top=90,status');return false" >各單位組織圖</a>
+            <span class="absolute top-[32px] w-full inline-block h-[4px] left-0  rounded-md transition-colors duration-300"></span>
+          </li>
+          <li class="text-[#2d338d] font-bold px-2 relative header-nav" >
+            <a href="/公佈欄/各處長官mail發送名單/mail發送名單.xlsx" target="_blank">
+            各長官mail發送清單</a>
+            <span class="absolute top-[32px] w-full inline-block h-[4px] left-0  rounded-md transition-colors duration-300"></span>
+          </li>
+          <li class="text-[#2d338d] font-bold px-2 relative header-nav" >
+            <a href="https://tcsms.tcs.com.tw/owa" target="_blank">員工信箱</a>
+            <span class="absolute top-[32px] w-full inline-block h-[4px] left-0  rounded-md transition-colors duration-300"></span>
+          </li>
+        </ul>
+        <div class="border-t-2 relative top-4"></div>
+        <div class="flex justify-between pt-4 items-center">
+          <section class="slogan xl:w-[70%] w-full pl-2">
+            <div class="flex items-center">
+                <img class="inline-block object-fill" src="img/service.png" width="27" height="29"><span class="font-bold text-[#FF7300] text-[13pt]">企業使命(客訴政策)：專業、誠信、滿意</span>
+                <img class="inline-block object-fill" src="img/mission.png" width="30" height="28"><span class="font-bold text-[#FF7300] text-[13pt]">服務承諾：1.用心傾聽，展現專業 2.保護個資，建立信賴 3.尊重顧客，貼心服務 4.積極處理，有效解決 5.營造雙贏，獲得滿意</span>
+            </div>
+          </section>
+          <div class="searchBox   flex w-[25%] min-w-[350px] pr-3  justify-end space-x-2 min-h-[20px] pt-2 ml-8">
+            <select id="mycategory" class="border-2 min-w-[190px] ">
+              <option value="/TWM專區,/銷售專區,/EBG專區,/EBG-809專區,/EBG-直營諮詢,/申裝查核處,/行動網專區,/TWM專區/TWM專區/TWM專區-WEBAP/TWM專區-WEBAP-新手機資訊,/新創服務">全部</option>
+              <option value="/TWM專區">【TWM專區】</option>
+              <option value="/銷售專區">【銷售專區】</option>
+              <option value="/EBG專區">【EBG專線-企業固網】</option>
+              <option value="/EBG-809專區">【EBG專區-企業行動】</option>
+              <option value="/EBG-直營諮詢">【EBG專區-直營諮詢】</option>
+              <option value="/TWM專區/TWM專區/TWM專區-WEBAP/TWM專區-WEBAP-新手機資訊">【手機資訊】</option>
+              <option value="/新創服務">【新創服務】</option>
+            </select>
+            <input id="SearchWord" type="text" value="" class="min-w-[150px] border-2 pl-2">
+            <button id="SearchBtn" class="min-w-[80px] py-1 border-2 flex items-center justify-center">
+              <img class="w-[20px]" src="./EBG/Promotion/NewHomePage/img/icons8-search.png" alt="">
+              <span class=" ml-1">搜尋</span>
+            </button>
+          </div>
+        </div>
+
+
+
+      </div>
+      <div class="ease-linear transition-transform duration-300 top-[110px] fixed right-0 w-[50px] h-[70px] bg-[#ff6700] px-2 pt-3  z-10 hover:translate-x-[-200px]">
+        <span class="text-white font-bold">線上</span>
+        <br>
+        <span class="text-white font-bold">廣告</span>
+        <aside class="space-y-2 w-[200px] py-4 bg-[#FFF] absolute left-full top-0 px-[5px]">
+          <a href="/%E5%85%AC%E4%BD%88%E6%AC%84/%E6%9C%8D%E5%8B%99%E8%A6%8F%E5%8A%83%E8%99%95/%E6%95%99%E8%82%B2%E8%A8%93%E7%B7%B4%E7%A7%91/%E7%B6%B2%E9%A0%81/%E9%8A%B7%E5%94%AE%E6%A6%AE%E8%AD%BD%E6%A6%9C.htm" target="_blank"
+          class="card block w-full overflow-hidden rounded-[10px]">
+            <img src="./EBG/Promotion/NewHomePage/img/card01.jpg" alt="">
+          </a>
+          <a href="/%E5%85%AC%E4%BD%88%E6%AC%84/%E6%9C%8D%E5%8B%99%E8%A6%8F%E5%8A%83%E8%99%95/%E6%95%99%E8%82%B2%E8%A8%93%E7%B7%B4%E7%A7%91/%E7%B6%B2%E9%A0%81/%E5%AE%A2%E6%9C%8D%E5%A0%B1%E5%A0%B11/%E5%90%84%E6%9C%9F%E5%88%8A%E7%89%A9/index_bookcase.html" target="_blank"
+          class="card block w-full overflow-hidden rounded-[10px]">
+            <img src="./EBG/Promotion/NewHomePage/img/card02.jpg" alt="">
+          </a>
+          <a href="http://twmmisl03/Massage/" target="_blank"
+          class="card block w-full overflow-hidden rounded-[10px]">
+            <img src="./EBG/Promotion/NewHomePage/img/card03.jpg" alt="">
+          </a>
+          <a href="https://twmhealthysvr.taiwanmobile.com/es-twm/index_twm.html" target="_blank"
+          class="card block w-full overflow-hidden rounded-[10px]">
+            <img src="./EBG/Promotion/NewHomePage/img/card04.jpg" alt="">
+          </a>
+        </aside>
+      </div>
+      <div class="relative w-full ">
+        <div class="cont mx-auto min-w-[1150px] relative top-[105px]">
+          <div class="sectionMenu flex">
+            <div class="section w-[20%] bg-[#ff9b0b] ">
+              <img class="sectionImg object-fill w-full" src="./EBG/Promotion/NewHomePage/img/h1.jpg" alt="">
+              <h2 class=" font-bold mt-1  pl-2 py-1 text-center text-xl text-white border-b-[1px] border-[#fff]">專業知識區</h2>
+              <ul class="px-4 pt-1 space-y-2">
+                <li class="font-semibold hover:text-[#FFF] transition-colors ] text-lg">‧<a href="/TCC/ttnt/twm_index.html">
+                  TWM</a></li>
+                <li class="font-semibold hover:text-[#FFF] transition-colors ] text-lg">‧<a href="/ebg/new/index.html">
+                  台灣大企業(EBG)</a></li>
+                <li class="font-semibold hover:text-[#FFF] transition-colors ] text-lg">‧<a href="/my_service/index.html" target="_blank">
+                  新創服務</a></li>
+                <li class="font-semibold hover:text-[#FFF] transition-colors ] text-lg">‧<a href="http://kms.tstartel.com/SmartKMS/Home.action" target="_blank">
+                  TST專區</a></li>
+              </ul>
+              <h3 class="mt-1 pl-4 font-bold text-lg">‧ 銷售專區</h3>
+              <ul class="px-4 py-2 flex items-center flex-wrap" style="padding-left: 30px;">
+                <li class="font-semibold text-[0.9rem] hover:text-[#FFF] transition-colors ]"><a href="/TCC/sale/index2017.htm">
+                  【OB / IB外撥小組 / UPSELL】</a></li>
+                  <span class="inline-block mx-[0.1rem]">|</span>
+                <li class="font-semibold text-[0.9rem] hover:text-[#FFF] transition-colors ]"><a href="/TCC/TM/index_tm.htm">
+                  【 TM 】</a></li>
+              </ul>              
+            </div>
+            <div class="section w-[20%] bg-[#ff6700] ">
+              <img class="sectionImg object-fill w-full" src="./EBG/Promotion/NewHomePage/img/h2.jpg" alt="">
+              <h2 class=" font-bold mt-1  pl-2 py-1 text-center text-xl text-white border-b-[1px] border-[#fff]">常用服務區</h2>
+              <ul class="px-4 pt-1 space-y-2">
+                <li class="font-semibold hover:text-[#FFF] transition-colors ] text-lg">‧<a href="/公佈欄/服務規劃處/共同區/formulate/index01.htm" target="_blank" onClick="insert_log('Ccweb首頁','Ccweb首頁','最新班表')">
+                  最新班表</a></li>
+                <li class="font-semibold hover:text-[#FFF] transition-colors ] text-lg">‧<a href="https://tcstm90.tcs.com.tw:9543/WFSWeb/login_form.aspx" target="_blank" onClick="insert_log('Ccweb首頁','Ccweb首頁','調代班系統')">
+                  調班系統</a></li>
+                <li class="font-semibold hover:text-[#FFF] transition-colors ] text-lg">‧<a href="https://twm/" target="_blank">
+                  TWM公用系統</a></li>
+              </ul>
+              <h3 class="mt-1 pl-4 font-bold text-lg">‧ 預選休</h3>
+              <ul class="px-4 py-2 flex items-center flex-wrap" style="padding-left: 30px;">
+                <li class="font-semibold text-[0.9rem] hover:text-[#FFF] transition-colors ]"><a href="/公佈欄/服務規劃處/網站規劃暨語音管理科/homepage/預選休系統/新版預選休操作手冊.pptx">
+                  【操作手冊】</a></li>
+                  <span class="inline-block mx-[0.1rem]">|</span>
+                <li class="font-semibold text-[0.9rem] hover:text-[#FFF] transition-colors ]"><a href="https://tcstm90.tcs.com.tw:9543/revrService/" target="_blank">
+                  【台北】</a></li>
+                  <span class="inline-block mx-[0.1rem]">|</span>
+                <li class="font-semibold text-[0.9rem] hover:text-[#FFF] transition-colors ]"><a href="https://tcs2apbk07.tcs.com.tw:9543/revrService/">
+                  【台中/高雄】</a></li>
+              </ul>              
+              <h3 class="mt-1 pl-4 font-bold text-lg">‧ 新版E化考試系統</h3>
+              <ul class="px-4 py-2 flex items-center flex-wrap" style="padding-left: 30px;">
+                <li class="font-semibold text-[0.9rem] hover:text-[#FFF] transition-colors ]"><a href="http://172.19.1.112:8080/ttnt_exam" target="_blank">
+                  【考試系統】</a></li>
+                  <span class="inline-block mx-[0.1rem]">|</span>
+                <li class="font-semibold text-[0.9rem] hover:text-[#FFF] transition-colors ]"><a href="/公佈欄/服務規劃處/品管科/Homepage/考試時程表/2024年考試時程表.xlsx">
+                  【2024年度考試時程表】</a></li>
+              </ul>              
+            </div>
+            <div class="section w-[20%] bg-[#3ab693] ">
+              <img class="sectionImg object-fill w-full" src="./EBG/Promotion/NewHomePage/img/h3.jpg" alt="">
+              <h2 class=" font-bold mt-1  pl-2 py-1 text-center text-xl text-white border-b-[1px] border-[#fff]">各處公告欄</h2>
+              <ul class="px-4 pt-1 space-y-2">
+                <li class="font-semibold hover:text-[#FFF] transition-colors ] text-lg">‧<a href="TCC/00_millieyu/0827/index03-02.htm" target="_blank" onClick="insert_log('Ccweb首頁','Ccweb首頁','專線單位')">
+                  專線單位</a></li>
+                <li class="font-semibold hover:text-[#FFF] transition-colors ] text-lg">‧<a href="TCC/00_millieyu/0827/index03-02.htm" target="_blank" onClick="insert_log('Ccweb首頁','Ccweb首頁','後勤單位')">
+                  後勤單位</a></li>
+                <li class="font-semibold hover:text-[#FFF] transition-colors ] text-lg">‧<a href="TCC/00_millieyu/0827/index03-02.htm" target="_blank" onClick="insert_log('Ccweb首頁','Ccweb首頁','管理單位')">
+                  管理單位</a></li>
+                <li class="font-semibold hover:text-[#FFF] transition-colors ] text-lg">‧<a href="/ccweb-ap/TTNT_Contactor/default.aspx" target="_blank">
+                  TTnT通訊錄</a></li>
+				 <li class="font-semibold transition-colors ] text-lg">‧ 我要訂會議室</li> 
+              </ul>  
+              <ul class="px-4 py-2 flex items-center flex-wrap" style="padding-left: 30px;">
+                <li class="font-semibold hover:text-[#FFF] transition-colors ]"><a href="https://tcstm90.tcs.com.tw:9443/meeting_Net/default.aspx?location=CBP-TTT" target="_blank">
+                  【台北】</a></li>
+                  <span class="inline-block mx-[0.1rem]">|</span>
+                <li class="font-semibold hover:text-[#FFF] transition-colors ]"><a href="https://tcstm90.tcs.com.tw:9443/meeting_Net/default.aspx?location=CBC-TTT" target="_blank">
+                  【台中】</a></li>
+                  <span class="inline-block mx-[0.1rem]">|</span>
+                <li class="font-semibold hover:text-[#FFF] transition-colors ]"><a href="https://tcstm90.tcs.com.tw:9443/meeting_Net/default.aspx?location=CBK-TTT" target="_blank">
+                  【高雄】</a></li>
+              </ul>                 
+            </div>
+            <div class="section w-[20%] bg-[#9985ff] ">
+              <img class="sectionImg object-fill w-full" src="./EBG/Promotion/NewHomePage/img/h4.jpg" alt="">
+              <h2 class=" font-bold mt-1  pl-2 py-1 text-center text-xl text-white border-b-[1px] border-[#fff]">應用服務網</h2>
+              <ul class="px-4 pt-1 space-y-2">
+                <li class="font-semibold hover:text-[#FFF] transition-colors ] text-lg">‧<a href="TCC/00_millieyu/0827/index03-03.htm" target="_blank" onClick="insert_log('Ccweb首頁','Ccweb首頁','我要找系統')">
+                  我要找系統</a></li>
+                <li class="font-semibold hover:text-[#FFF] transition-colors ] text-lg">‧<a href="TCC/00_millieyu/0827/index03-03-02.htm" target="_blank" onClick="insert_log('Ccweb首頁','Ccweb首頁','我要請假')">
+                  我要請假</a></li>
+                <li class="font-semibold hover:text-[#FFF] transition-colors ] text-lg">‧<a href="/公佈欄/服務規劃處/品管科/Homepage/quality/new/index.html" target="_blank" onClick="insert_log('Ccweb首頁','Ccweb首頁','我的績效')">
+                  我的績效</a></li>
+                <li class="font-semibold hover:text-[#FFF] transition-colors ] text-lg">‧<a href="/公佈欄/服務規劃處/教育訓練科/網頁/index.htm" target="_blank" onClick="insert_log('Ccweb首頁','Ccweb首頁','教育訓練')">
+                  教育訓練</a></li>
+				  <li class="font-semibold transition-colors ] text-lg">‧ 我要報修</li>				   
+              </ul>                             
+				<ul class="px-4 py-2 flex items-center flex-wrap" style="padding-left: 30px;">
+                <li class="font-semibold hover:text-[#FFF] transition-colors ]"><a href="https://twmmisl03/cis/Info.aspx" target="_blank"> 
+                  【報修系統】</a></li>
+                <li class="font-semibold hover:text-[#FFF] transition-colors ]"><a href="/ccweb-ap/GnlUHD_NET/GnlUhdNewsQuery.aspx" target="_blank">
+                  【台北總務報修】</a></li>
+              </ul>
+            </div>
+            <div class="section w-[20%] bg-[#f893bf] ">
+              <img class="sectionImg object-fill w-full" src="./EBG/Promotion/NewHomePage/img/h5.jpg" alt="">
+              <h2 class=" font-bold mt-1  pl-2 py-1 text-center text-xl text-white border-b-[1px] border-[#fff]">訊息傳達站</h2>
+              <ul class="px-4 pt-1 flex flex-wrap">
+                <li class="font-semibold mt-0 w-[50%] hover:text-[#FFF] transition-colors text-lg">‧<a href="/TCC/tcc_website/dpt/index_isms.htm">
+                  資安專區</a></li>
+                <li class="font-semibold mt-0 w-[50%] hover:text-[#FFF] transition-colors text-lg">‧<a href="/TCC/00_millieyu/20121009/" target="_blank">
+                  SGS驗證專區</a></li>
+                <li class="font-semibold mt-2 w-[50%] hover:text-[#FFF] transition-colors text-lg">‧<a href="/TCC/00_millieyu/0827/index03-04.htm">
+                  交流分享區</a></li>
+                <li class="font-semibold mt-2 w-[50%] hover:text-[#FFF] transition-colors text-lg">‧<a href="https://twm/OP/" target="_blank">
+                  OP品牌專區</a></li>
+                <li class="font-semibold mt-2 w-[50%] hover:text-[#FFF] transition-colors text-lg">‧<a href="/TCC/00_millieyu/0827/index03-05.htm">
+                  TWM專區</a></li>
+                <li class="font-semibold mt-2 w-[50%] hover:text-[#FFF] transition-colors text-lg">‧<a href="/%E5%85%AC%E4%BD%88%E6%AC%84/%E5%90%84%E8%99%95%E9%95%B7%E5%AE%98mail%E7%99%BC%E9%80%81%E5%90%8D%E5%96%AE/%E6%9C%80%E6%96%B0%E5%BA%A7%E4%BD%8D%E8%A1%A8/homepage/index.htm" target="_blank"> 
+                  最新座位表</a></li>
+                <li class="font-semibold mt-2 w-[50%] hover:text-[#FFF] transition-colors text-lg">‧<a href="/TCC/00_millieyu/20140106/" target="_blank">
+                  徵才訊息</a></li>
+				  <li class="font-semibold mt-2 w-[50%] hover:text-[#FFF] transition-colors text-lg"></li>
+				  <li class="font-semibold mt-2 w-[50%] transition-colors text-lg">‧ 客服問問</li>
+				  <ul class="px-4 py-2 flex items-center flex-wrap">
+                <li class="font-semibold hover:text-[#FFF] transition-colors"><a href="https://tcsms.tcs.com.tw/owa/?path=/mail/action/compose&amp;to=TTNTTalk@ttnt.com.tw&amp;subject=%e5%ae%a2%e6%9c%8d%e5%95%8f%e5%95%8f&body=請寫下您的想法與建議" target="_blank" onclick="insert_log('Ccweb首頁','Ccweb首頁','客服問問')">
+                  【台北】</a></li>
+                  <span class="inline-block mx-[0.1rem]">|</span>
+                <li class="font-semibold hover:text-[#FFF] transition-colors"><a href="https://tcs2ms.tcs.com.tw/owa/?path=/mail/action/compose&amp;to=TTNTTalk@ttnt.com.tw&amp;subject=%e5%ae%a2%e6%9c%8d%e5%95%8f%e5%95%8f&body=請寫下您的想法與建議" target="_blank" onclick="insert_log('Ccweb首頁','Ccweb首頁','客服問問')">
+                  【台中】</a></li>
+                  <span class="inline-block mx-[0.1rem]">|</span>
+                <li class="font-semibold hover:text-[#FFF] transition-colors"><a href="https://tcs3ms.tcs.com.tw/owa/?path=/mail/action/compose&amp;to=TTNTTalk@ttnt.com.tw&amp;subject=%e5%ae%a2%e6%9c%8d%e5%95%8f%e5%95%8f&body=請寫下您的想法與建議" target="_blank" onclick="insert_log('Ccweb首頁','Ccweb首頁','客服問問')">
+                  【高雄】</a></li>
+              </ul>  
+              </ul>                  
+            </div>
+          </div>
+
+          <main  class=" py-4 px-8   bg-[#eff2f7] flex flex-wrap">
+
+            <article class="list w-[100%] flex flex-wrap  justify-between">
+              <section class="w-[49.5%]">
+                <h1 class=" flex items-center  relative">
+                  <span class="inline-block rounded-[50%] w-[15px] h-[15px] bg-[#ff6700] mr-[15px]"></span>
+                  <span class="text-2xl font-bold">TTNT即時訊息</span>
+                  <div class="articleBtn border-2 flex items-center absolute right-0">
+                    <a href="/TCC/00_millieyu/0827/index02_more.htm" target="_blank"  
+                    class="duration-300 transition-colors  bg-white block w-[90px] h-[30px] pt-[4px] pl-[15px] text-[#888] text-[14px]">
+                      看更多</a>
+                    <svg class="duration-300 transition-colors  bg-white font-bold pt-[7px] w-[15px] h-[30px] text-gray-600  absolute right-3 "><path  d="m5.5 3 5 5-5 5" stroke="currentColor"  fill="none"></path></svg>
+                  </div>
+                </h1>
+                <ul class="space-y-2 mt-4 pb-12">
+                  <li class=" odd:bg-[#eff2f7] even:bg-[#FFFFFF] hover:text-[#ff6700] font-bold py-2 pl-4  text-[14px]">
+                    <a href="/banner/%E5%81%A5%E7%AE%A1%E7%B3%BB%E7%B5%B1.htm" target="_blank">
+                    <span class=" inline-block w-[70px] text-[#999] font-bold">112/12/06</span>
+                    <span class="duration-300 transition-colors ml-2 cursor-pointer">提供專屬您的健康照護平台【健康管理系統】</span>
+                    </a>
+                  </li>
+                  <li class=" odd:bg-[#eff2f7] even:bg-[#FFFFFF] hover:text-[#ff6700] font-bold py-2 pl-4  text-[14px]">
+                    <a href="/banner/%E5%AE%A2%E6%9C%8DMV%20EDM.htm" target="_blank">
+                    <span class=" inline-block w-[70px] text-[#999] font-bold">112/11/29</span>
+                    <span class="duration-300 transition-colors ml-2 cursor-pointer">客服專屬MV【活力客服 用心服務】現正熱播中</span>
+                    </a>
+                  </li>
+                  <li class=" odd:bg-[#eff2f7] even:bg-[#FFFFFF] hover:text-[#ff6700] font-bold py-2 pl-4  text-[14px]">
+                    <a href="/%E5%85%AC%E4%BD%88%E6%AC%84/%E6%9C%8D%E5%8B%99%E8%A6%8F%E5%8A%83%E8%99%95/%E7%B6%B2%E7%AB%99%E8%A6%8F%E5%8A%83%E6%9A%A8%E8%AA%9E%E9%9F%B3%E7%AE%A1%E7%90%86%E7%A7%91/homepage/%E5%B7%A5%E4%BD%9C%E6%99%BA%E6%85%A7%E7%8E%8B%E6%8F%90%E6%A1%88/index_2023.htm" target="_blank">
+                    <span class=" inline-block w-[70px] text-[#999] font-bold">112/10/05</span>
+                    <span class="duration-300 transition-colors ml-2 cursor-pointer">2023年工作智慧王名單出爐囉!!</span>
+                    </a>
+                  </li>
+                  <li class=" odd:bg-[#eff2f7] even:bg-[#FFFFFF] hover:text-[#ff6700] font-bold py-2 pl-4  text-[14px]">
+                    <a href="/%E5%85%AC%E4%BD%88%E6%AC%84/%E5%8B%9E%E5%B7%A5%E5%AE%89%E5%85%A8%E8%A1%9B%E7%94%9F%E7%AE%A1%E7%90%86%E5%AE%A4/homepage/Document/COVID-19/20230427.html" target="_blank">
+                    <span class=" inline-block w-[70px] text-[#999] font-bold">112/04/27</span>
+                    <span class="duration-300 transition-colors ml-2 cursor-pointer">【勞安室公告】2023/5/1疫後健康新生活</span>
+                    </a>
+                  </li>
+                </ul>
+              </section>
+              <section class="w-[49.5%] ml-[1%]">
+                <h1 class=" flex items-center  relative">
+                  <span class="inline-block rounded-[50%] w-[15px] h-[15px] bg-[#ff6700] mr-[15px]"></span>
+                  <span class="text-2xl font-bold">TWM新聞中心</span>
+                  <div class="articleBtn border-2 flex items-center absolute right-0">
+                    <a href="https://corp.taiwanmobile.com/twmg/pressRelease/index.action" target="_blank"  
+                    class="duration-300 transition-colors  bg-white block w-[90px] h-[30px] pt-[4px] pl-[15px] text-[#888] text-[14px]">
+                      看更多</a>
+                    <svg class="duration-300 transition-colors  bg-white font-bold pt-[7px] w-[15px] h-[30px] text-gray-600  absolute right-3 "><path  d="m5.5 3 5 5-5 5" stroke="currentColor"  fill="none"></path></svg>
+                  </div>
+                </h1>
+                <ul class="space-y-2 mt-4">
+                  <li class=" odd:bg-[#eff2f7] even:bg-[#FFFFFF] hover:text-[#ff6700] font-bold py-2 pl-4  text-[14px]">
+                    <a target="_blank" href="https://corp.taiwanmobile.com/press-release/news/press_20240117_476269.html">
+                    <span class=" inline-block w-[70px] text-[#999] font-bold">113/01/17</span>
+                    <span class="duration-300 transition-colors ml-2 cursor-pointer">全台電信業首家採用Matter協定 台灣大擴大智慧家庭生態系</span>
+                    </a>
+                  </li>
+                  <li class=" odd:bg-[#eff2f7] even:bg-[#FFFFFF] hover:text-[#ff6700] font-bold py-2 pl-4  text-[14px]">
+                    <a target="_blank" href="https://corp.taiwanmobile.com/press-release/news/press_20240117_470765.html">
+                    <span class=" inline-block w-[70px] text-[#999] font-bold">113/01/17</span>
+                    <span class="duration-300 transition-colors ml-2 cursor-pointer">台灣大西門町門市耍潮 潮流空間翻玩新科技</span>
+                    </a>
+                  </li>
+                  <li class=" odd:bg-[#eff2f7] even:bg-[#FFFFFF] hover:text-[#ff6700] font-bold py-2 pl-4  text-[14px]">
+                    <a target="_blank" href="https://corp.taiwanmobile.com/press-release/news/press_20240115_310551.html">
+                    <span class=" inline-block w-[70px] text-[#999] font-bold">113/01/15</span>
+                    <span class="duration-300 transition-colors ml-2 cursor-pointer">台灣大首度參加2024台北國際電玩展 Riot Games 5款熱門遊戲一次展出</span>
+                    </a>
+                  </li>
+                  <li class=" odd:bg-[#eff2f7] even:bg-[#FFFFFF] hover:text-[#ff6700] font-bold py-2 pl-4  text-[14px]">
+                    <a target="_blank" href="https://corp.taiwanmobile.com/press-release/news/press_20240110_882021.html">
+                    <span class=" inline-block w-[70px] text-[#999] font-bold">113/01/10</span>
+                    <span class="duration-300 transition-colors ml-2 cursor-pointer">112年營運績效公布</span>
+                    </a>
+                  </li>
+                  <li class=" odd:bg-[#eff2f7] even:bg-[#FFFFFF] hover:text-[#ff6700] font-bold py-2 pl-4  text-[14px]">
+                    <a target="_blank" href="https://corp.taiwanmobile.com/press-release/news/press_20240109_788423.html">
+                    <span class=" inline-block w-[70px] text-[#999] font-bold">113/01/09</span>
+                    <span class="duration-300 transition-colors ml-2 cursor-pointer">台灣大「好速加掛」行動加光纖享優惠 光纖上網新申裝用戶申辦指定專案最高省3,600元</span>
+                    </a>
+                  </li>
+                </ul>
+              </section>
+
+
+            </article>
+
+          </main>
+
+        </div>
+        <div class="overflow-hidden flex flex-wrap   w-full absolute left-0 top-0 -z-10">
+          <img class="absolute z-10  animation-org-1" src="./EBG/Promotion/NewHomePage/img/bg2.png" alt="">
+          <img class="absolute z-10  animation-org-2" src="./EBG/Promotion/NewHomePage/img/bg3.png" alt="">
+          <img class="absolute top-[-150px] left-[50px] z-10  animation-org-3" src="./EBG/Promotion/NewHomePage/img/bg1.png" alt="">
+          <img class="absolute z-10 right-20 top-[20rem] animation-light-org-1" src="./EBG/Promotion/NewHomePage/img/bg1.png" alt="">
+
+          <div class="bgBlock relative z-0 ogange bg-[#ff6700] w-3/5 "></div>
+          <div class="bgBlock relative z-0 green bg-[#0eaa7d] w-2/5 "></div>
+          <div class="relative z-0 ogange bg-[#ff6700] w-3/5 h-[584px]"></div>
+          <div class="relative z-0 green bg-[#ff9b0b] w-2/5 h-[584px]"   ></div>
+          <!-- <div class="relative z-20 blue bg-[#9985ff] w-3/5 h-[250px] overflow-hidden">
+            <img class="absolute  top-[-200px] animation-blue-1" src="./EBG/Promotion/NewHomePage/img/bg3.png" alt="">
+          </div>
+          <div class="relative z-20 light-ogange bg-[#ff9b0b] w-2/5 h-[250px] "></div> -->
+          <!-- <div class="footerBlock relative z-0 pink bg-[#f893bf] w-full"   ></div> -->
+        </div>
+      </div>
+
+
+
+    
+  </div>
+  <script>
+      // 搜尋功能
+        const searchWordInput = document.querySelector('#SearchWord');
+        const searchBtn = document.querySelector('#SearchBtn');
+        const categorySelect = document.querySelector("#mycategory");
+        let isSearchFocus = false;
+
+        searchWordInput.addEventListener('focus', () => {
+          isSearchFocus = true;
+        });
+
+        searchWordInput.addEventListener('blur', () => {
+          isSearchFocus = false;
+        });
+
+        function submitSearch() {
+          let keyword = searchWordInput.value.trim().replace(" ", "&");
+          let searchCategory = categorySelect.value;
+        
+          if (keyword !== '') {
+            const searchUrl = `http://172.19.1.22/tornado/result.aspx?keyword=${encodeURIComponent(keyword)}&searchCategory=${encodeURIComponent(searchCategory)}&action=1`;
+            window.open(searchUrl);
+          }
+        }
+
+        window.addEventListener("keydown", (e) => {
+          if (e.keyCode === 13 && isSearchFocus) {
+            submitSearch();
+          }
+        });
+
+        searchBtn.addEventListener("click", () => {
+          submitSearch();
+        });
+
+
+    </script>    
+</body>
+</html>
