@@ -8,17 +8,35 @@ window.onload = () =>{
             const IndexPage = ref('index')
             const handIndexPage = (el = null , key, callback = null )=> {
                 IndexPage.value = key
-                if(key === '各處公告欄'){
-                    BulletinBoardsTitle.value  = callback
+            }
+            const BulletinBoardsTitle = ref('')
+            const BulletinBoardsBool  = ref(false)
+            const handBulletinBoardsTitle = (el = null , key ) =>{
+                if(key === 'clear'){
+                    ClearBulletinBoards()
+                    return
                 }
-                console.log(IndexPage.value);
+                if(BulletinBoardsTitle.value !== '' && BulletinBoardsBool.value){
+                    BulletinBoardsTitle.value = key
+                    return
+                }
+                if(BulletinBoardsTitle.value === '' && !BulletinBoardsBool.value){
+                    BulletinBoardsTitle.value = key
+                    BulletinBoardsBool.value = true
+                }
+            }
+            const ClearBulletinBoards = ()=>{
+                BulletinBoardsTitle.value = ''
+                BulletinBoardsBool.value = false
             }
 
-            const BulletinBoardsTitle = ref('')
             return{
                 IndexPage,
                 handIndexPage,
-                BulletinBoardsTitle
+
+                BulletinBoardsBool,
+                BulletinBoardsTitle,
+                handBulletinBoardsTitle,
             }   
         },
 
@@ -26,5 +44,8 @@ window.onload = () =>{
     createApp(App).mount("#app")     
 
 }
+
+
+
 
 
