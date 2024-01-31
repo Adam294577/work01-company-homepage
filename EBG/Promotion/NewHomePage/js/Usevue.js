@@ -29,6 +29,16 @@ window.onload = () =>{
                 BulletinBoardsTitle.value = ''
                 BulletinBoardsBool.value = false
             }
+            // 網址轉到服規內容
+            const pushWindowSearch = (el = null ,key) => {
+                if(key === ""){
+                    window.open(`./服務規劃處_index.html`)
+                }else{
+                    window.open(`./服務規劃處_index.html?cont=${key}`)
+                }
+                
+            }
+            
 
             return{
                 IndexPage,
@@ -37,6 +47,7 @@ window.onload = () =>{
                 BulletinBoardsBool,
                 BulletinBoardsTitle,
                 handBulletinBoardsTitle,
+                pushWindowSearch,
             }   
         },
 
