@@ -125,7 +125,6 @@
     left: 125px;
     top: -100px;
   }
-  /* .2xl:left-[150px] 2xl:top-[-125px] */
   @media (min-width: 1540px) {
     .index-cont{
       width: 90%;

@@ -8,10 +8,8 @@
   <link rel="Shortcut Icon" type="image/x-icon" href="/TCC/img/twmlogo.ico" />	
   <link rel="stylesheet" href="./EBG/Promotion/NewHomePage/css/homepage.css">
   <script type="text/javascript" src="/ebg/js/jquery.min.js"></script>
-  <script type="text/javascript" src="/ccweb-ap/ebg/jquery/jquery.signalR-2.4.2.js"></script>		
-  <script src="./EBG/Promotion/NewHomePage/js/tailwind.js"></script> 
-
-
+  <script type="text/javascript" src="/ccweb-ap/ebg/jquery/jquery.signalR-2.4.2.js"></script>	
+  <script src="./EBG/Promotion/NewHomePage/js/tailwind.js"></script> 	
 </head>
 <body>
   <div id="app">
@@ -157,8 +155,7 @@
                 <li @mouseover="handBulletinBoardsTitle(null,'後勤單位')" class="w-[120px] font-semibold hover:text-[#FFF] transition-colors  text-lg cursor-pointer">‧ 後勤單位</a></li>
                 <li @mouseover="handBulletinBoardsTitle(null,'管理單位')" class="w-[120px] font-semibold hover:text-[#FFF] transition-colors  text-lg cursor-pointer">‧ 管理單位</a></li>
                 </ul>  
-                <div 
-                class="relative BulletinBoardsBlock"
+                <div :class="['relative', {'BulletinBoardsBlock': BulletinBoardsTitle !== ''}]"
                 v-show="BulletinBoardsBool" @mouseleave="handBulletinBoardsTitle(null,'clear')">
                   <ul class="space-y-1 absolute top-0 bg-[#346b5b] rounded-md p-4 w-[160px]" v-if=" BulletinBoardsTitle === '專線單位'">
                     <li class="text-white font-bold text-[13pt] transition-colors duration-300 cursor-pointer hover:text-[#ff6700] ">
