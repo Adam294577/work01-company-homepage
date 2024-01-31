@@ -1,0 +1,185 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>台灣客服- 我要請假</title>
+    <link rel="Shortcut Icon" type="image/x-icon" href="/TCC/img/twmlogo.ico" />	
+    <link rel="stylesheet" href="./EBG/Promotion/NewHomePage/css/homepage.css">
+    <script type="text/javascript" src="/ebg/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/ccweb-ap/ebg/jquery/jquery.signalR-2.4.2.js"></script>		
+    <script src="./EBG/Promotion/NewHomePage/js/tailwind.js"></script> 
+
+    <style>
+      body{
+        overflow-y: hidden;
+      }
+      ::-webkit-scrollbar{
+        display: none;
+      }
+    </style>
+  
+  </head>
+<body>
+  <div id="app">
+      <div class="header pt-2 pb-2  bg-white fixed w-full z-20" >
+        <a href="./test.html">
+          <img class="absolute top-[5px] left-8 cursor-pointer" src="./EBG/Promotion/NewHomePage/img/logo.png" alt="">
+        </a>
+        <ul class="memu flex justify-end pt-2 mr-4">
+          <li class="text-[#2d338d] font-bold px-2 relative header-nav" >
+            <a href="/TCC/00_millieyu/ccweb_2007/other/sir/index_sir.htm" onclick="window.open(this.href,'','resizable=yes,location=no,menubar=no,scrollbars=yes,status=no,toolbar=no,fullscreen=no,dependent=no,width=860,height=760,left=60,top=90,status');return false" >
+            認識客服與大哥大長官</a>
+            <span class="absolute top-[32px] w-full inline-block h-[4px] left-0  rounded-md transition-colors duration-300"></span>
+          </li>
+          <li class="text-[#2d338d] font-bold  relative header-nav" >
+            <a href="/test_group.html" class="cursor-pointer block px-2">各單位組織圖</a>
+            <span class="absolute top-[32px] w-full inline-block h-[4px] left-0  rounded-md transition-colors duration-300"></span>
+          </li>
+          <li class="text-[#2d338d] font-bold px-2 relative header-nav" >
+            <a href="/公佈欄/各處長官mail發送名單/mail發送名單.xlsx" target="_blank">
+            各長官mail發送清單</a>
+            <span class="absolute top-[32px] w-full inline-block h-[4px] left-0  rounded-md transition-colors duration-300"></span>
+          </li>
+          <li class="text-[#2d338d] font-bold px-2 relative header-nav" >
+            <a href="https://tcsms.tcs.com.tw/owa" target="_blank">員工信箱</a>
+            <span class="absolute top-[32px] w-full inline-block h-[4px] left-0  rounded-md transition-colors duration-300"></span>
+          </li>
+        </ul>
+        <div class="border-t-2 relative top-4"></div>
+        <div class="flex justify-between pt-4 items-center">
+          <section class="slogan xl:w-[70%] w-full pl-2">
+            <div class="flex items-center">
+                <img class="inline-block object-fill" src="img/service.png" width="27" height="29"><span class="font-bold text-[#FF7300] text-[13pt]">企業使命(客訴政策)：專業、誠信、滿意</span>
+                <img class="inline-block object-fill" src="img/mission.png" width="30" height="28"><span class="font-bold text-[#FF7300] text-[13pt]">服務承諾：1.用心傾聽，展現專業 2.保護個資，建立信賴 3.尊重顧客，貼心服務 4.積極處理，有效解決 5.營造雙贏，獲得滿意</span>
+            </div>
+          </section>
+          <div class="searchBox   flex w-[25%] min-w-[350px] pr-3  justify-end space-x-2 min-h-[20px] pt-2 ml-8">
+            <select id="mycategory" class="border-2 min-w-[190px] ">
+              <option value="/TWM專區,/銷售專區,/EBG專區,/EBG-809專區,/EBG-直營諮詢,/申裝查核處,/行動網專區,/TWM專區/TWM專區/TWM專區-WEBAP/TWM專區-WEBAP-新手機資訊,/新創服務">全部</option>
+              <option value="/TWM專區">【TWM專區】</option>
+              <option value="/銷售專區">【銷售專區】</option>
+              <option value="/EBG專區">【EBG專線-企業固網】</option>
+              <option value="/EBG-809專區">【EBG專區-企業行動】</option>
+              <option value="/EBG-直營諮詢">【EBG專區-直營諮詢】</option>
+              <option value="/TWM專區/TWM專區/TWM專區-WEBAP/TWM專區-WEBAP-新手機資訊">【手機資訊】</option>
+              <option value="/新創服務">【新創服務】</option>
+            </select>
+            <input id="SearchWord" type="text" value="" class="min-w-[150px] border-2 pl-2">
+            <button id="SearchBtn" class="min-w-[80px] py-1 border-2 flex items-center justify-center">
+              <img class="w-[20px]" src="./EBG/Promotion/NewHomePage/img/icons8-search.png" alt="">
+              <span class=" ml-1">搜尋</span>
+            </button>
+          </div>
+        </div>
+
+
+
+      </div>
+      <div class="ease-linear transition-transform duration-300 top-[110px] fixed right-0 w-[50px] h-[70px] bg-[#ff6700] px-2 pt-3  z-30 hover:translate-x-[-200px]">
+        <span class="text-white font-bold">線上</span>
+        <br>
+        <span class="text-white font-bold">廣告</span>
+        <aside class="space-y-2 w-[200px] py-4 bg-[#FFF] absolute left-full top-0 px-[5px]">
+          <a href="/%E5%85%AC%E4%BD%88%E6%AC%84/%E6%9C%8D%E5%8B%99%E8%A6%8F%E5%8A%83%E8%99%95/%E6%95%99%E8%82%B2%E8%A8%93%E7%B7%B4%E7%A7%91/%E7%B6%B2%E9%A0%81/%E9%8A%B7%E5%94%AE%E6%A6%AE%E8%AD%BD%E6%A6%9C.htm" target="_blank"
+          class="card block w-full overflow-hidden rounded-[10px]">
+            <img src="./EBG/Promotion/NewHomePage/img/card01.jpg" alt="">
+          </a>
+          <a href="/%E5%85%AC%E4%BD%88%E6%AC%84/%E6%9C%8D%E5%8B%99%E8%A6%8F%E5%8A%83%E8%99%95/%E6%95%99%E8%82%B2%E8%A8%93%E7%B7%B4%E7%A7%91/%E7%B6%B2%E9%A0%81/%E5%AE%A2%E6%9C%8D%E5%A0%B1%E5%A0%B11/%E5%90%84%E6%9C%9F%E5%88%8A%E7%89%A9/index_bookcase.html" target="_blank"
+          class="card block w-full overflow-hidden rounded-[10px]">
+            <img src="./EBG/Promotion/NewHomePage/img/card02.jpg" alt="">
+          </a>
+          <a href="http://twmmisl03/Massage/" target="_blank"
+          class="card block w-full overflow-hidden rounded-[10px]">
+            <img src="./EBG/Promotion/NewHomePage/img/card03.jpg" alt="">
+          </a>
+          <a href="https://twmhealthysvr.taiwanmobile.com/es-twm/index_twm.html" target="_blank"
+          class="card block w-full overflow-hidden rounded-[10px]">
+            <img src="./EBG/Promotion/NewHomePage/img/card04.jpg" alt="">
+          </a>
+        </aside>
+      </div>
+      <div class=" relative w-full">
+        <!-- 我要請假 -->
+        <div class="BulletinBoard min-w-[1150px] relative top-[145px] z-20 bg-[#eff2f7]  w-[80%] h-[80vh] mx-auto p-4 rounded-md">
+          <h1 class=" flex items-center  relative justify-center">
+            <span class="inline-block rounded-[50%] w-[15px] h-[15px] bg-[#ff6700] mr-[15px]"></span>
+            <span class="text-2xl font-bold">應用服務網 - 我要請假</span>
+          </h1>  
+          <div class="BulletinBoardBtn border-2 flex items-center absolute left-1/2 -translate-x-1/2 bottom-4 overflow-hidden rounded-md cursor-pointer">
+            <a href="./test.html" class="duration-300 transition-colors  bg-white block w-[90px] h-[40px] leading-[40px] pl-[20px] text-[#000] text-[14px] font-bold">
+              返回</a>
+            <svg class="duration-300 transition-colors  bg-white font-bold pt-[7px] w-[15px] h-[30px] text-gray-600  absolute right-3 "><path  d="m5.5 3 5 5-5 5" stroke="currentColor"  fill="none"></path></svg>
+          </div>   
+          <iframe src="https://ccweb-tpweb.tcs.com.tw//TTnT/SU2/請假辦法/index.htm" width="100%" class="h-[65vh] mt-1" frameborder="0"></iframe>       
+    
+        </div>
+
+
+        <!-- 首頁背景色塊高度 -->
+        <div class="overflow-hidden flex flex-wrap   w-full absolute left-0 top-0 -z-10">
+          <img class="absolute z-10  animation-org-1" src="./EBG/Promotion/NewHomePage/img/bg2.png" alt="">
+          <img class="absolute z-10  animation-org-2" src="./EBG/Promotion/NewHomePage/img/bg3.png" alt="">
+          <img class="absolute top-[-150px] left-[50px] z-10  animation-org-3" src="./EBG/Promotion/NewHomePage/img/bg1.png" alt="">
+          <img class="absolute z-10 right-20 top-[20rem] animation-light-org-1" src="./EBG/Promotion/NewHomePage/img/bg1.png" alt="">
+
+          <div class="bgBlock relative z-0 ogange bg-[#ff6700] w-3/5 "></div>
+          <div class="bgBlock relative z-0 green bg-[#0eaa7d] w-2/5 "></div>
+          <div class="relative z-0 ogange bg-[#ff6700] w-3/5 h-[587px]"></div>
+          <div class="relative z-0 green bg-[#ff9b0b] w-2/5 h-[587px]"   ></div>
+          <!-- <div class="relative z-20 blue bg-[#9985ff] w-3/5 h-[250px] overflow-hidden">
+            <img class="absolute  top-[-200px] animation-blue-1" src="./EBG/Promotion/NewHomePage/img/bg3.png" alt="">
+          </div>
+          <div class="relative z-20 light-ogange bg-[#ff9b0b] w-2/5 h-[250px] "></div> -->
+          <!-- <div class="footerBlock relative z-0 pink bg-[#f893bf] w-full"   ></div> -->
+        </div>
+      </div>
+
+
+
+    
+  </div>
+  <script src="./EBG/Promotion/NewHomePage/js/vue.js"></script>
+  <script src="./EBG/Promotion/NewHomePage/js/Usevue_FindSystem.js"></script>
+  <script>
+      // 搜尋功能
+        const searchWordInput = document.querySelector('#SearchWord');
+        const searchBtn = document.querySelector('#SearchBtn');
+        const categorySelect = document.querySelector("#mycategory");
+        let isSearchFocus = false;
+
+        searchWordInput.addEventListener('focus', () => {
+          isSearchFocus = true;
+        });
+
+        searchWordInput.addEventListener('blur', () => {
+          isSearchFocus = false;
+        });
+
+        function submitSearch() {
+          let keyword = searchWordInput.value.trim().replace(" ", "&");
+          let searchCategory = categorySelect.value;
+        
+          if (keyword !== '') {
+            const searchUrl = `http://172.19.1.22/tornado/result.aspx?keyword=${encodeURIComponent(keyword)}&searchCategory=${encodeURIComponent(searchCategory)}&action=1`;
+            window.open(searchUrl);
+          }
+        }
+
+        window.addEventListener("keydown", (e) => {
+          if (e.keyCode === 13 && isSearchFocus) {
+            submitSearch();
+          }
+        });
+
+        searchBtn.addEventListener("click", () => {
+          submitSearch();
+        });
+        // 另開啟請假系統視窗
+        window.open('https://employeeportal.taiwanmobile.com/EFPS/frameset.aspx')
+
+
+  </script>    
+</body>
+</html>
