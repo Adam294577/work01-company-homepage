@@ -6,172 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>台灣客服INTRANET</title>
   <link rel="Shortcut Icon" type="image/x-icon" href="/TCC/img/twmlogo.ico" />	
+  <link rel="stylesheet" href="./EBG/Promotion/NewHomePage/css/homepage.css">
   <script type="text/javascript" src="/ebg/js/jquery.min.js"></script>
   <script type="text/javascript" src="/ccweb-ap/ebg/jquery/jquery.signalR-2.4.2.js"></script>		
   <script src="./EBG/Promotion/NewHomePage/js/tailwind.js"></script> 
 
-  <style>
-    .Navdot_act{
-      width: 8px;
-      height: 8px;
-      display: inline-block;
-      background: #ff6700;
-      border-radius: 50%;
-      cursor: pointer;
-    }
-    .Navdot{
-      cursor: pointer;
-      width: 8px;
-      height: 8px;
-      display: inline-block;
-      border-radius: 50%;
-      border: 1px solid #ff6700;
-    }
 
-    .articleBtn:hover a,.articleBtn:hover svg,.BulletinBoardBtn:hover a,.BulletinBoardBtn:hover svg{
-      background: #ff6700;
-      color: #FFF;
-    }
-    .header-nav:hover span{
-      
-      background: #2d338d;
-    }
-
-
-    /* animation */
-    .animation-org-1{
-      opacity: 0.55;
-      animation-name: org-1;
-      animation-duration: 30s;
-      animation-timing-function: linear;
-      animation-fill-mode: forwards;
-      animation-iteration-count: infinite;
-    }
-    .animation-org-2{
-      opacity: 0.8;
-      animation-name: org-2;
-      animation-duration: 12s;
-      animation-timing-function: linear;
-      animation-fill-mode: forwards;
-      animation-iteration-count: infinite;
-    }
-    .animation-org-3{
-      animation-name: org-3;
-      animation-duration: 15s;
-      animation-timing-function: linear;
-      animation-fill-mode: forwards;
-      animation-iteration-count: infinite;
-    }
-    .animation-light-org-1{
-      animation-name: light-org-1;
-      animation-duration: 50s;
-      animation-timing-function: linear;
-      animation-fill-mode: forwards;
-      animation-iteration-count: infinite;
-    }
-    .animation-blue-1{
-      animation-name: blue-1;
-      animation-duration: 35s;
-      animation-timing-function: linear;
-      animation-fill-mode: forwards;
-      animation-iteration-count: infinite;
-    }
-    @keyframes org-1 {
-      0%{
-        transform: translate(-50px,-200px) rotate(0);
-      }
-      50%{
-        transform: translate(-50px,1000px) rotate(1080deg);
-      }
-      100%{
-        transform: translate(-50px,-200px) rotate(2160deg);
-      }
-    }
-    @keyframes org-2 {
-      0%{
-        transform: translate(-100px,1000px) rotate(0) scale(1);
-      }
-      33%{
-        transform: translate(200px,300px) rotate(180deg) scale(1.1);
-      }
-      100%{
-        transform: translate(200px,300px) rotate(180deg) scale(1.1);
-      }
-    }
-    @keyframes org-3 {
-      0%{
-        transform: translate(0px,-50px) rotate(0) scale(1);
-      }
-      10%{
-        transform: translate(120px,50px) rotate(-100deg) scale(1);
-      }
-      100%{
-        transform: translate(120px,50px) rotate(-100deg) scale(1);
-      }
-    }
-    @keyframes light-org-1 {
-      0%{
-        transform: translate(0px,0px) rotate(0) scale(1);
-      }
-      50%{
-        transform: translate(-10px,200px) rotate(1440deg) scale(1);
-      }
-      100%{
-        transform: translate(0px,0px) rotate(2880deg) scale(1);
-      }
-    }
-    @keyframes blue-1 {
-      0%{
-        transform: translate(0px,-100px) rotate(0) scale(1);
-      }
-      30%{
-        transform: translate(200px,500px) rotate(720deg) scale(1);
-      }
-      70%{
-        transform: translate(200px,500px) rotate(720deg) scale(1);
-      }
-      90%{
-        transform: translate(0px,-100px) rotate(1440deg) scale(1);
-      }
-      100%{
-        transform: translate(0px,-100px) rotate(1440deg) scale(1);
-      }
-    }
-    /* RWD */
-    .index-cont{
-      width: 90%;
-    }
-    .bgBlock{
-      height: 305px;
-    }
-    .sectionImg{
-      height: 159px;
-    }
-
-    .footerBlock{
-      height: 50px;
-    }
-    @media (min-width: 1540px) {
-      .index-cont{
-        width: 90%;
-      }
-
-      .bgBlock{
-        height: 385px;
-      }
-      .sectionImg{
-        height: 192px;
-      }
-      .footerBlock{
-      height: 0px;
-    }        
-      .animation-light-org-1{
-        display: none;
-      }
-
-    }
-  
-  </style>
 </head>
 <body>
   <div id="app">
@@ -184,7 +24,7 @@
             <span class="absolute top-[32px] w-full inline-block h-[4px] left-0  rounded-md transition-colors duration-300"></span>
           </li>
           <li class="text-[#2d338d] font-bold  relative header-nav" >
-            <a class="cursor-pointer block px-2"  @click="handIndexPage(null, '各單位組織圖')">各單位組織圖</a>
+            <a href="/test_group.html" class="cursor-pointer block px-2">各單位組織圖</a>
             <span class="absolute top-[32px] w-full inline-block h-[4px] left-0  rounded-md transition-colors duration-300"></span>
           </li>
           <li class="text-[#2d338d] font-bold px-2 relative header-nav" >
@@ -369,9 +209,7 @@
               <img class="sectionImg object-fill w-full" src="./EBG/Promotion/NewHomePage/img/h4.jpg" alt="">
               <h2 class=" font-bold mt-1  pl-2 py-1 text-center text-xl text-white border-b-[1px] border-[#fff]">應用服務網</h2>
               <ul class="px-4 pt-1 flex flex-wrap">
-                <li 
-                @click="handIndexPage(null, '我要找系統')"
-                class="font-semibold mt-0 w-[50%] hover:text-[#FFF] transition-colors text-lg">‧<a onClick="insert_log('Ccweb首頁','Ccweb首頁','我要找系統')"  style="cursor:pointer;">
+                <li class="font-semibold mt-0 w-[50%] hover:text-[#FFF] transition-colors text-lg">‧<a href="./test_FindSystem.html" onClick="insert_log('Ccweb首頁','Ccweb首頁','我要找系統')"  style="cursor:pointer;">
                   我要找系統</a></li>
                 <li class="font-semibold mt-0 w-[50%] hover:text-[#FFF] transition-colors text-lg">‧<a href="TCC/00_millieyu/0827/index03-03-02.htm" target="_blank" onClick="insert_log('Ccweb首頁','Ccweb首頁','我要請假')">
                   我要請假</a></li>
@@ -833,64 +671,6 @@
         </div>
         
 
-        <!-- 各單位組織圖 -->
-        <div class="BulletinBoard min-w-[1150px] relative top-[250px] z-20 bg-[#eff2f7]  w-[80%] h-[380px] mx-auto p-4 rounded-md" v-show=" IndexPage === '各單位組織圖'">
-          <h1 class=" flex items-center  relative justify-center">
-            <span class="inline-block rounded-[50%] w-[15px] h-[15px] bg-[#ff6700] mr-[15px]"></span>
-            <span class="text-2xl font-bold">各單位組織圖</span>
-           
-          </h1>  
-          <div @click="handIndexPage(null,'index')" 
-          class="BulletinBoardBtn border-2 flex items-center absolute left-1/2 -translate-x-1/2 bottom-4 overflow-hidden rounded-md cursor-pointer">
-            <a class="duration-300 transition-colors  bg-white block w-[90px] h-[40px] leading-[40px] pl-[20px] text-[#000] text-[14px] font-bold">
-              返回</a>
-            <svg class="duration-300 transition-colors  bg-white font-bold pt-[7px] w-[15px] h-[30px] text-gray-600  absolute right-3 "><path  d="m5.5 3 5 5-5 5" stroke="currentColor"  fill="none"></path></svg>
-          </div>
-          <ul class="flex justify-center items-center h-[250px] flex-wrap">
-            <div class="row space-y-4">
-              <li class="duration-300 transition-colors hover:bg-[#ff6700] hover:text-white font-bold border-2 rounded-md bg-white min-w-[250px] text-center mx-4">
-                <a class="block p-4"
-                href="/TTnT/SU2/HR/index/台灣客服科技組織圖.doc" target="_blank">
-                TTNT組織圖</a></li>
-              <li class="duration-300 transition-colors hover:bg-[#ff6700] hover:text-white font-bold border-2 rounded-md bg-white min-w-[250px] text-center mx-4">
-                <a class="block p-4"
-                href="/公佈欄/各處長官mail發送名單/各單位組織圖/01_台北專線處_組織圖.xls" target="_blank">
-                台北專線服務處</a></li>
-              <li class="duration-300 transition-colors hover:bg-[#ff6700] hover:text-white font-bold border-2 rounded-md bg-white min-w-[250px] text-center mx-4">
-                <a class="block p-4"
-                href="/公佈欄/各處長官mail發送名單/各單位組織圖/02_台中專線處_組織圖.xls" target="_blank">
-                台中專線服務處</a></li>
-            </div>
-            <div class="row space-y-4">
-              <li class="duration-300 transition-colors hover:bg-[#ff6700] hover:text-white font-bold border-2 rounded-md bg-white min-w-[250px] text-center mx-4">
-                <a class="block p-4"
-                href="/公佈欄/各處長官mail發送名單/各單位組織圖/03_高雄專線處_組織圖.xlsx" target="_blank">
-                高雄專線服務處</a></li>
-              <li class="duration-300 transition-colors hover:bg-[#ff6700] hover:text-white font-bold border-2 rounded-md bg-white min-w-[250px] text-center mx-4">
-                <a class="block p-4"
-                href="/公佈欄/各處長官mail發送名單/各單位組織圖/05_電話行銷處_組織圖.xls" target="_blank">
-                電話行銷處</a></li>
-              <li class="duration-300 transition-colors hover:bg-[#ff6700] hover:text-white font-bold border-2 rounded-md bg-white min-w-[250px] text-center mx-4">
-                <a class="block p-4"
-                href="/公佈欄/各處長官mail發送名單/各單位組織圖/06_申裝查核處_組織圖.xls" target="_blank">
-                申裝查核處</a></li>
-            </div>
-            <div class="row space-y-4">
-              <li class="duration-300 transition-colors hover:bg-[#ff6700] hover:text-white font-bold border-2 rounded-md bg-white min-w-[250px] text-center mx-4">
-                <a class="block p-4"
-                href="/公佈欄/各處長官mail發送名單/各單位組織圖/10_專線服務支援處_組織圖.xlsx" target="_blank">
-                專線服務支援處</a></li>
-              <li class="duration-300 transition-colors hover:bg-[#ff6700] hover:text-white font-bold border-2 rounded-md bg-white min-w-[250px] text-center mx-4">
-                <a class="block p-4"
-                href="/公佈欄/各處長官mail發送名單/各單位組織圖/07_服務規劃處_組織圖.xls" target="_blank">
-                服務規劃處</a></li>
-              <li class="duration-300 transition-colors hover:bg-[#ff6700] hover:text-white font-bold border-2 rounded-md bg-white min-w-[250px] text-center mx-4">
-                <a class="block p-4"
-                href="/公佈欄/各處長官mail發送名單/各單位組織圖/11_帳務處_組織圖.xlsx" target="_blank">
-                帳務處</a></li>
-            </div>
-          </ul>    
-        </div>
 
 
         <!-- 首頁背景色塊高度 -->
@@ -911,10 +691,6 @@
           <div class="footerBlock relative z-0 pink bg-[#f893bf] w-full"   ></div>
         </div>
       </div>
-
-
-
-    
   </div>
   <script src="./EBG/Promotion/NewHomePage/js/vue.js"></script>
   <script src="./EBG/Promotion/NewHomePage/js/Usevue.js"></script>
