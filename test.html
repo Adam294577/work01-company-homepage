@@ -44,7 +44,7 @@
             </div>
           </section>
           <div class="searchBox   flex w-[25%] min-w-[350px] pr-3  justify-end space-x-2 min-h-[20px] pt-2 ml-8">
-            <select id="mycategory" class="border-2 min-w-[190px] ">
+            <select class="border-2 min-w-[190px]" v-model="CategorySelect">
               <option value="/TWM專區,/銷售專區,/EBG專區,/EBG-809專區,/EBG-直營諮詢,/申裝查核處,/行動網專區,/TWM專區/TWM專區/TWM專區-WEBAP/TWM專區-WEBAP-新手機資訊,/新創服務">全部</option>
               <option value="/TWM專區">【TWM專區】</option>
               <option value="/銷售專區">【銷售專區】</option>
@@ -54,8 +54,8 @@
               <option value="/TWM專區/TWM專區/TWM專區-WEBAP/TWM專區-WEBAP-新手機資訊">【手機資訊】</option>
               <option value="/新創服務">【新創服務】</option>
             </select>
-            <input id="SearchWord" type="text" value="" class="min-w-[150px] border-2 pl-2">
-            <button id="SearchBtn" class="min-w-[80px] py-1 border-2 flex items-center justify-center">
+            <input ref="SearchWordInput" type="text" value="" class="min-w-[150px] border-2 pl-2">
+            <button @click="submitSearch" class="min-w-[80px] py-1 border-2 flex items-center justify-center">
               <img class="w-[20px]" src="./EBG/Promotion/NewHomePage/img/icons8-search.png" alt="">
               <span class=" ml-1">搜尋</span>
             </button>
@@ -119,7 +119,7 @@
               <h2 class=" font-bold mt-1  pl-2 py-1 text-center text-xl text-white border-b-[1px] border-[#fff]">常用服務區</h2>
 				
               <ul class="px-4 pt-1 flex flex-wrap">
-                <li class="font-semibold mt-0 w-[60%] hover:text-[#FFF] transition-colors  text-lg">‧<a href="/公佈欄/服務規劃處/共同區/formulate/index01.htm" target="_blank" onClick="insert_log('Ccweb首頁','Ccweb首頁','最新班表')">
+                <li class="font-semibold mt-0 w-[60%] hover:text-[#FFF] transition-colors  text-lg">‧<a href="/服務規劃處_index.html?cont=最新班表" target="_blank" onClick="insert_log('Ccweb首頁','Ccweb首頁','最新班表')">
                   最新班表</a></li>
                 <li class="font-semibold mt-0 w-[40%] hover:text-[#FFF] transition-colors  text-lg">‧<a href="https://tcstm90.tcs.com.tw:9543/WFSWeb/login_form.aspx" target="_blank" onClick="insert_log('Ccweb首頁','Ccweb首頁','調代班系統')">
                   調班系統</a></li>
@@ -185,7 +185,7 @@
                       <a href="/公佈欄/申裝查核處/共同區/homepage/index.htm" target="_blank">
                         申裝查核處</a></li>
                     <li class="text-white font-bold text-[13pt] transition-colors duration-300 cursor-pointer hover:text-[#ff6700] ">
-                      <a href="/公佈欄/服務規劃處/共同區/homepage/index.htm" target="_blank">
+                      <a href="/服務規劃處_index.html" target="_blank">
                         服務規劃處</a></li>
                     <li class="text-white font-bold text-[13pt] transition-colors duration-300 cursor-pointer hover:text-[#ff6700] ">
                       <a href="/公佈欄/專線服務支援處/共用區/homepage/index.htm" target="_blank">
@@ -292,7 +292,7 @@
                   <span class="inline-block rounded-[50%] w-[15px] h-[15px] bg-[#ff6700] mr-[15px]"></span>
                   <span class="text-2xl font-bold">TTNT即時訊息</span>
                   <div class="articleBtn border-2 flex items-center absolute right-0">
-                    <a href="/TCC/00_millieyu/0827/index02_more.htm" target="_blank"  
+                    <a href="/test_TTNTHistroy.html" 
                     class="duration-300 transition-colors  bg-white block w-[90px] h-[30px] pt-[4px] pl-[15px] text-[#888] text-[14px]">
                       看更多</a>
                     <svg class="duration-300 transition-colors  bg-white font-bold pt-[7px] w-[15px] h-[30px] text-gray-600  absolute right-3 "><path  d="m5.5 3 5 5-5 5" stroke="currentColor"  fill="none"></path></svg>
@@ -406,40 +406,6 @@
   <script src="./EBG/Promotion/NewHomePage/js/vue.js"></script>
   <script src="./EBG/Promotion/NewHomePage/js/Usevue.js"></script>
   <script>
-      // 搜尋功能
-        const searchWordInput = document.querySelector('#SearchWord');
-        const searchBtn = document.querySelector('#SearchBtn');
-        const categorySelect = document.querySelector("#mycategory");
-        let isSearchFocus = false;
-
-        searchWordInput.addEventListener('focus', () => {
-          isSearchFocus = true;
-        });
-
-        searchWordInput.addEventListener('blur', () => {
-          isSearchFocus = false;
-        });
-
-        function submitSearch() {
-          let keyword = searchWordInput.value.trim().replace(" ", "&");
-          let searchCategory = categorySelect.value;
-        
-          if (keyword !== '') {
-            const searchUrl = `http://172.19.1.22/tornado/result.aspx?keyword=${encodeURIComponent(keyword)}&searchCategory=${encodeURIComponent(searchCategory)}&action=1`;
-            window.open(searchUrl);
-          }
-        }
-
-        window.addEventListener("keydown", (e) => {
-          if (e.keyCode === 13 && isSearchFocus) {
-            submitSearch();
-          }
-        });
-
-        searchBtn.addEventListener("click", () => {
-          submitSearch();
-        });
-
 // 取得登入帳號 - 請勿編輯
  	var srToken1 = ""; //連線 SignalR Hub 前先取得 TokenCenter 認證的 Token
  	var IsUseAuth = $("#txtIsUseAuth").val();
