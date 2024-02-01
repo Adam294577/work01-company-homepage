@@ -8,10 +8,8 @@
   <link rel="Shortcut Icon" type="image/x-icon" href="/TCC/img/twmlogo.ico" />	
   <link rel="stylesheet" href="./EBG/Promotion/NewHomePage/css/homepage.css">
   <script type="text/javascript" src="/ebg/js/jquery.min.js"></script>
-  <script type="text/javascript" src="/ccweb-ap/ebg/jquery/jquery.signalR-2.4.2.js"></script>		
-  <script src="./EBG/Promotion/NewHomePage/js/tailwind.js"></script> 
-
-
+  <script type="text/javascript" src="/ccweb-ap/ebg/jquery/jquery.signalR-2.4.2.js"></script>	
+  <script src="./EBG/Promotion/NewHomePage/js/tailwind.js"></script> 	
 </head>
 <body>
   <div id="app">
@@ -151,14 +149,15 @@
               <img class="sectionImg object-fill w-full" src="./EBG/Promotion/NewHomePage/img/h3.jpg" alt="">
               <h2 class=" font-bold mt-1  pl-2 py-1 text-center text-xl text-white border-b-[1px] border-[#fff]">各處公告欄</h2>
               <ul class="px-4 pt-1 space-y-2">
-                <li class="font-semibold hover:text-[#FFF] transition-colors  text-lg">‧<a href="/ccweb-ap/TTNT_Contactor/default.aspx" target="_blank">
+                <li class="w-[120px] font-semibold hover:text-[#FFF] transition-colors  text-lg cursor-pointer">‧<a href="/ccweb-ap/TTNT_Contactor/default.aspx" target="_blank">
                   TTnT通訊錄</a></li>
                 <li @mouseover="handBulletinBoardsTitle(null,'專線單位')" class="w-[120px] font-semibold hover:text-[#FFF] transition-colors  text-lg cursor-pointer">‧ 專線單位</li>
                 <li @mouseover="handBulletinBoardsTitle(null,'後勤單位')" class="w-[120px] font-semibold hover:text-[#FFF] transition-colors  text-lg cursor-pointer">‧ 後勤單位</a></li>
                 <li @mouseover="handBulletinBoardsTitle(null,'管理單位')" class="w-[120px] font-semibold hover:text-[#FFF] transition-colors  text-lg cursor-pointer">‧ 管理單位</a></li>
                 </ul>  
-                <div v-show="BulletinBoardsBool" @mouseleave="handBulletinBoardsTitle(null,'clear')">
-                  <ul class="space-y-1 absolute left-[110px] top-[265px] bg-[#346b5b] rounded-md p-4 w-[155px]" v-if=" BulletinBoardsTitle === '專線單位'">
+                <div :class="['relative', {'BulletinBoardsBlock': BulletinBoardsTitle !== ''}]"
+                v-show="BulletinBoardsBool" @mouseleave="handBulletinBoardsTitle(null,'clear')">
+                  <ul class="space-y-1 absolute top-0 bg-[#346b5b] rounded-md p-4 w-[160px]" v-if=" BulletinBoardsTitle === '專線單位'">
                     <li class="text-white font-bold text-[13pt] transition-colors duration-300 cursor-pointer hover:text-[#ff6700] ">
                       <a href="/公佈欄/台北專線服務處/homepage/專一處首頁/2018-台北專線/index.htm" target="_blank">
                         台北專線</a></li>
@@ -172,7 +171,7 @@
                       <a href="/ccweb-ap/TTNT_Contactor/default.aspx?dept=AAT5000" target="_blank">
                         電話行銷</a></li>
                   </ul>
-                  <ul class="space-y-1 absolute left-[110px] top-[280px] bg-[#346b5b] rounded-md p-4 w-[155px]" v-if=" BulletinBoardsTitle === '後勤單位'">
+                  <ul class="space-y-1 absolute top-0 bg-[#346b5b] rounded-md p-4 w-[160px]" v-if=" BulletinBoardsTitle === '後勤單位'">
                     <li class="text-white font-bold text-[13pt] transition-colors duration-300 cursor-pointer hover:text-[#ff6700] ">
                       <a href="/公佈欄/申裝查核處/共同區/homepage/index.htm" target="_blank">
                         申裝查核處</a></li>
@@ -183,7 +182,7 @@
                       <a href="/公佈欄/專線服務支援處/共用區/homepage/index.htm" target="_blank">
                         專線服務支援處</a></li>
                   </ul>
-                  <ul class="space-y-1 absolute left-[110px] top-[265px] bg-[#346b5b] rounded-md p-4 w-[155px]" v-if=" BulletinBoardsTitle === '管理單位'">
+                  <ul class="space-y-1 absolute top-0 bg-[#346b5b] rounded-md p-4 w-[160px]" v-if=" BulletinBoardsTitle === '管理單位'">
                     <li class="text-white font-bold text-[13pt] transition-colors duration-300 cursor-pointer hover:text-[#ff6700] ">
                       <a href="/TTnT/SU2/職福會/homepage/index.htm" target="_blank">
                     職福會</a></li>

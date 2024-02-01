@@ -121,6 +121,10 @@
   .footerBlock{
     height: 50px;
   }
+  .BulletinBoardsBlock{
+    left: 125px;
+    top: -100px;
+  }
   @media (min-width: 1540px) {
     .index-cont{
       width: 90%;
@@ -135,5 +139,8 @@
     .animation-light-org-1{
       display: none;
     }
-
+    .BulletinBoardsBlock{
+      left: 150px;
+      top: -130px;
+    }
   }
