@@ -17,8 +17,8 @@ window.onload = () =>{
                 {where:'各處公告欄' , className:'MenuBlockPosition_green' ,key:'後勤單位', },
                 {where:'各處公告欄' , className:'MenuBlockPosition_green' ,key:'管理單位', },
                 {where:'常用服務區' , className:'MenuBlockPosition_brown' ,key:'預選休', },
-                {where:'應用服務網' , className:'MenuBlockPosition_blue' , key:'我要報修', },
-                {where:'應用服務網' , className:'MenuBlockPosition_blue' , key:'我要訂會議室', },
+                {where:'應用服務網' , className:'MenuBlockPosition_blue_Repair' , key:'我要報修', },
+                {where:'應用服務網' , className:'MenuBlockPosition_blue_Meeting' , key:'我要訂會議室', },
                 {where:'訊息傳達站' , className:'MenuBlockPosition_purple',key:'客服問問', },
             ]})
             const handMenuBlock = (el = null , key ) =>{

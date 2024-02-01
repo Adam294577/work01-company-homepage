@@ -127,11 +127,15 @@
   }
   .MenuBlockPosition_brown{
     left: 80px;
-    top: -140px
+    top: -135px
   }
-  .MenuBlockPosition_blue{
+  .MenuBlockPosition_blue_Repair{
+    left: 100px;
+    top: 0px;
+  }
+  .MenuBlockPosition_blue_Meeting{
     left: 10px;
-    top: 30px;
+    top: 10px;
   }
   .MenuBlockPosition_purple{
     left: 10px;
@@ -159,10 +163,14 @@
       left: 80px;
       top: -140px
     }
-    .MenuBlockPosition_blue{
-      left: 50px;
-      top: 30px;
-    }  
+    .MenuBlockPosition_blue_Repair{
+      left: 150px;
+      top: -30px;
+    }
+    .MenuBlockPosition_blue_Meeting{
+      left: 80px;
+      top: 10px;
+    }
     .MenuBlockPosition_purple{
       left: 80px;
       top: 10px;
