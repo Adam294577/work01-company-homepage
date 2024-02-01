@@ -8,8 +8,8 @@
   <link rel="Shortcut Icon" type="image/x-icon" href="/TCC/img/twmlogo.ico" />	
   <link rel="stylesheet" href="./EBG/Promotion/NewHomePage/css/homepage.css">
   <script type="text/javascript" src="/ebg/js/jquery.min.js"></script>
-  <script type="text/javascript" src="/ccweb-ap/ebg/jquery/jquery.signalR-2.4.2.js"></script>	
-  <script src="./EBG/Promotion/NewHomePage/js/tailwind.js"></script> 	
+  <script type="text/javascript" src="/ccweb-ap/ebg/jquery/jquery.signalR-2.4.2.js"></script>		
+
 </head>
 <body>
   <div id="app">
@@ -117,13 +117,16 @@
             <div class="section w-[20%] bg-[#ff6700] ">
               <img class="sectionImg object-fill w-full" src="./EBG/Promotion/NewHomePage/img/h2.jpg" alt="">
               <h2 class=" font-bold mt-1  pl-2 py-1 text-center text-xl text-white border-b-[1px] border-[#fff]">常用服務區</h2>
-              <ul class="px-4 pt-1 space-y-2">
-                <li class="font-semibold hover:text-[#FFF] transition-colors  text-lg">‧<a href="/公佈欄/服務規劃處/共同區/formulate/index01.htm" target="_blank" onClick="insert_log('Ccweb首頁','Ccweb首頁','最新班表')">
+				
+              <ul class="px-4 pt-1 flex flex-wrap">
+                <li class="font-semibold mt-0 w-[50%] hover:text-[#FFF] transition-colors  text-lg">‧<a href="/公佈欄/服務規劃處/共同區/formulate/index01.htm" target="_blank" onClick="insert_log('Ccweb首頁','Ccweb首頁','最新班表')">
                   最新班表</a></li>
-                <li class="font-semibold hover:text-[#FFF] transition-colors  text-lg">‧<a href="https://tcstm90.tcs.com.tw:9543/WFSWeb/login_form.aspx" target="_blank" onClick="insert_log('Ccweb首頁','Ccweb首頁','調代班系統')">
+                <li class="font-semibold mt-0 w-[50%] hover:text-[#FFF] transition-colors  text-lg">‧<a href="https://tcstm90.tcs.com.tw:9543/WFSWeb/login_form.aspx" target="_blank" onClick="insert_log('Ccweb首頁','Ccweb首頁','調代班系統')">
                   調班系統</a></li>
-                <li class="font-semibold hover:text-[#FFF] transition-colors  text-lg">‧<a href="https://twm/" target="_blank">
+                <li class="font-semibold mt-2 w-[50%] hover:text-[#FFF] transition-colors  text-lg">‧<a href="https://twm/" target="_blank" onClick="insert_log('Ccweb首頁','Ccweb首頁','TWM公用系統')">
                   TWM公用系統</a></li>
+				<li class="font-semibold mt-2 w-[50%] hover:text-[#FFF] transition-colors  text-lg">‧<a href="https://twm.business.hahow.in/home" target="_blank" onClick="insert_log('Ccweb首頁','Ccweb首頁','Hahow')">
+                  Hahow</a></li>  
               </ul>
               <h3 class="mt-1 pl-4 font-bold text-lg">‧ 預選休</h3>
               <ul class="pl-[30px] py-2 flex items-center flex-wrap">
@@ -393,6 +396,7 @@
         </div>
       </div>
   </div>
+  <script src="./EBG/Promotion/NewHomePage/js/tailwind.js"></script> 
   <script src="./EBG/Promotion/NewHomePage/js/vue.js"></script>
   <script src="./EBG/Promotion/NewHomePage/js/Usevue.js"></script>
   <script>
