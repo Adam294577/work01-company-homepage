@@ -38,10 +38,18 @@
         <div class="border-t-2 relative top-4"></div>
         <div class="flex justify-between pt-4 items-center">
           <section class="slogan xl:w-[70%] w-full pl-2">
-            <div class="flex items-center">
+            <div class="items-center flex-wrap space-y-2 LaptopView">
+              <span class="w-full inline-block">
                 <img class="inline-block object-fill" src="img/service.png" width="27" height="29"><span class="font-bold text-[#FF7300] text-[13pt]">企業使命(客訴政策)：專業、誠信、滿意</span>
+              </span>
+              <span class="w-full inline-block">
                 <img class="inline-block object-fill" src="img/mission.png" width="30" height="28"><span class="font-bold text-[#FF7300] text-[13pt]">服務承諾：1.用心傾聽，展現專業 2.保護個資，建立信賴 3.尊重顧客，貼心服務 4.積極處理，有效解決 5.營造雙贏，獲得滿意</span>
+              </span>
             </div>
+            <div class="items-center PcView">
+              <img class="inline-block object-fill" src="img/service.png" width="27" height="29"><span class="font-bold text-[#FF7300] text-[13pt]">企業使命(客訴政策)：專業、誠信、滿意</span>
+              <img class="inline-block object-fill" src="img/mission.png" width="30" height="28"><span class="font-bold text-[#FF7300] text-[13pt]">服務承諾：1.用心傾聽，展現專業 2.保護個資，建立信賴 3.尊重顧客，貼心服務 4.積極處理，有效解決 5.營造雙贏，獲得滿意</span>
+          </div>            
           </section>
           <div class="searchBox   flex w-[25%] min-w-[350px] pr-3  justify-end space-x-2 min-h-[20px] pt-2 ml-8">
             <select class="border-2 min-w-[190px]" v-model="CategorySelect">
@@ -119,29 +127,29 @@
               <h2 class=" font-bold mt-1  pl-2 py-1 text-center text-xl text-white border-b-[1px] border-[#fff]">常用服務區</h2>
 				
               <ul class="px-4 pt-1 flex flex-wrap">
-                <li class="font-semibold mt-0 w-[60%] hover:text-[#FFF] transition-colors  text-lg">‧<a href="/服務規劃處_index.html?cont=最新班表" target="_blank" onClick="insert_log('Ccweb首頁','Ccweb首頁','最新班表')">
+                <li @mouseover="handMenuBlock(null,'clear')" class="font-semibold mt-0 w-[60%] hover:text-[#FFF] transition-colors  text-lg">‧<a href="/服務規劃處_index.html?cont=最新班表" target="_blank" onClick="insert_log('Ccweb首頁','Ccweb首頁','最新班表')">
                   最新班表</a></li>
                 <li class="font-semibold mt-0 w-[40%] hover:text-[#FFF] transition-colors  text-lg">‧<a href="https://tcstm90.tcs.com.tw:9543/WFSWeb/login_form.aspx" target="_blank" onClick="insert_log('Ccweb首頁','Ccweb首頁','調代班系統')">
                   調班系統</a></li>
-                <li class="font-semibold mt-2 w-[60%] hover:text-[#FFF] transition-colors  text-lg">‧<a href="https://twm/" target="_blank" onClick="insert_log('Ccweb首頁','Ccweb首頁','TWM公用系統')">
+                <li @mouseover="handMenuBlock(null,'clear')" class="font-semibold mt-2 w-[60%] hover:text-[#FFF] transition-colors  text-lg">‧<a href="https://twm/" target="_blank" onClick="insert_log('Ccweb首頁','Ccweb首頁','TWM公用系統')">
                   TWM公用系統</a></li>
 				        <li class="font-semibold mt-2 w-[40%] hover:text-[#FFF] transition-colors  text-lg">‧<a href="https://twm.business.hahow.in/home" target="_blank" onClick="insert_log('Ccweb首頁','Ccweb首頁','Hahow')">
                   Hahow</a></li>  
 				        <li @mouseover="handMenuBlock(null,'預選休')" :class="['font-semibold', 'mt-2', 'w-[60%]', 'hover:text-[#FFF]', 'transition-colors', 'text-lg', {'text-white': MenuBlockTopic === '預選休'}]">
                   ‧預選休</li>  
-                  <li class="font-semibold mt-2 w-[40%] hover:text-[#FFF] transition-colors text-lg">‧<a href="/公佈欄/服務規劃處/教育訓練科/網頁/index.htm" target="_blank" onClick="insert_log('Ccweb首頁','Ccweb首頁','教育訓練')">
+                  <li @mouseover="handMenuBlock(null,'clear')" class="font-semibold mt-2 w-[40%] hover:text-[#FFF] transition-colors text-lg">‧<a href="/公佈欄/服務規劃處/教育訓練科/網頁/index.htm" target="_blank" onClick="insert_log('Ccweb首頁','Ccweb首頁','教育訓練')">
                     教育訓練</a></li>                  
               </ul>
               <ul class="pl-[30px] py-2 flex items-center flex-wrap">
-                <li class="font-semibold text-[0.9rem] hover:text-[#FFF] transition-colors "><a href="/公佈欄/服務規劃處/網站規劃暨語音管理科/homepage/預選休系統/新版預選休操作手冊.pptx">
+                <li @mouseover="handMenuBlock(null,'clear')" class="font-semibold text-[0.9rem] hover:text-[#FFF] transition-colors "><a href="/公佈欄/服務規劃處/網站規劃暨語音管理科/homepage/預選休系統/新版預選休操作手冊.pptx">
                   【操作手冊】</a></li>
               </ul>        
               <ul>
-                <li class="mt-1 pl-4 font-bold text-lg hover:text-[#FFF] transition-colors cursor-pointer "><a href="http://172.19.1.112:8080/ttnt_exam" target="_blank">
+                <li @mouseover="handMenuBlock(null,'clear')" class="mt-1 pl-4 font-bold text-lg hover:text-[#FFF] transition-colors cursor-pointer "><a href="http://172.19.1.112:8080/ttnt_exam" target="_blank">
                   ‧ 新版E化考試系統</a></li>
               </ul>      
               <ul class="pl-[30px] py-2 flex items-center flex-wrap">
-                <li class="font-semibold text-[0.9rem] hover:text-[#FFF] transition-colors "><a href="/公佈欄/服務規劃處/品管科/Homepage/考試時程表/2024年考試時程表.xlsx">
+                <li @mouseover="handMenuBlock(null,'clear')" class="font-semibold text-[0.9rem] hover:text-[#FFF] transition-colors "><a href="/公佈欄/服務規劃處/品管科/Homepage/考試時程表/2024年考試時程表.xlsx">
                   【2024年度考試時程表】</a></li>
               </ul>   
               <div :class="['relative', MenuBlockClass]"
@@ -158,7 +166,7 @@
               <img class="sectionImg object-fill w-full" src="./EBG/Promotion/NewHomePage/img/h3.jpg" alt="">
               <h2 class=" font-bold mt-1  pl-2 py-1 text-center text-xl text-white border-b-[1px] border-[#fff]">各處公告欄</h2>
               <ul class="px-4 pt-1 space-y-2">
-                <li class="w-[120px] font-semibold hover:text-[#FFF] transition-colors  text-lg cursor-pointer">‧<a href="/ccweb-ap/TTNT_Contactor/default.aspx" target="_blank">
+                <li @mouseover="handMenuBlock(null,'clear')" class="w-[120px] font-semibold hover:text-[#FFF] transition-colors  text-lg cursor-pointer">‧<a href="/ccweb-ap/TTNT_Contactor/default.aspx" target="_blank">
                   TTnT通訊錄</a></li>
                 <li @mouseover="handMenuBlock(null,'專線單位')" :class="['w-[120px]', 'font-semibold', 'hover:text-[#FFF]', 'transition-colors',  'text-lg', 'cursor-pointer',{'text-white': MenuBlockTopic === '專線單位'}]">‧ 專線單位</li>
                 <li @mouseover="handMenuBlock(null,'後勤單位')" :class="['w-[120px]', 'font-semibold', 'hover:text-[#FFF]', 'transition-colors',  'text-lg', 'cursor-pointer',{'text-white': MenuBlockTopic === '後勤單位'}]">‧ 後勤單位</a></li>
@@ -219,11 +227,11 @@
               <h2 class=" font-bold mt-1  pl-2 py-1 text-center text-xl text-white border-b-[1px] border-[#fff]">應用服務網</h2>
               <ul class="px-4 pt-1 flex flex-wrap">
                 
-                <li class="font-semibold mt-0 w-[50%] hover:text-[#FFF] transition-colors text-lg">‧<a href="/test_FindSystem.html" onClick="insert_log('Ccweb首頁','Ccweb首頁','我要找系統')"  style="cursor:pointer;">
+                <li @mouseover="handMenuBlock(null,'clear')" class="font-semibold mt-0 w-[50%] hover:text-[#FFF] transition-colors text-lg">‧<a href="/test_FindSystem.html" onClick="insert_log('Ccweb首頁','Ccweb首頁','我要找系統')"  style="cursor:pointer;">
                   我要找系統</a></li>
-                <li class="font-semibold mt-0 w-[50%] hover:text-[#FFF] transition-colors text-lg">‧<a href="/test_WorkLeave.html" onClick="insert_log('Ccweb首頁','Ccweb首頁','我要請假')">
+                <li @mouseover="handMenuBlock(null,'clear')" class="font-semibold mt-0 w-[50%] hover:text-[#FFF] transition-colors text-lg">‧<a href="/test_WorkLeave.html" onClick="insert_log('Ccweb首頁','Ccweb首頁','我要請假')">
                   我要請假</a></li>
-                <li class="font-semibold mt-2 w-[50%] hover:text-[#FFF] transition-colors text-lg">‧<a href="/公佈欄/服務規劃處/品管科/Homepage/quality/new/index.html" target="_blank" onClick="insert_log('Ccweb首頁','Ccweb首頁','我的績效')">
+                <li @mouseover="handMenuBlock(null,'clear')" class="font-semibold mt-2 w-[50%] hover:text-[#FFF] transition-colors text-lg">‧<a href="/公佈欄/服務規劃處/品管科/Homepage/quality/new/index.html" target="_blank" onClick="insert_log('Ccweb首頁','Ccweb首頁','我的績效')">
                   我的績效</a></li>
 				        <li @mouseover="handMenuBlock(null,'我要報修')" :class="['font-semibold', 'mt-2', 'w-[50%]', 'hover:text-[#FFF]', 'transition-colors', 'text-lg', {'text-white': MenuBlockTopic === '我要報修'}]">
                   ‧ 我要報修</li>			
@@ -252,21 +260,21 @@
               <img class="sectionImg object-fill w-full" src="./EBG/Promotion/NewHomePage/img/h5.jpg" alt="">
               <h2 class=" font-bold mt-1  pl-2 py-1 text-center text-xl text-white border-b-[1px] border-[#fff]">訊息傳達站</h2>
               <ul class="px-4 pt-1 flex flex-wrap">
-                <li class="font-semibold mt-0 w-[50%] hover:text-[#FFF] transition-colors text-lg">‧<a href="/TCC/tcc_website/dpt/index_isms.htm">
+                <li @mouseover="handMenuBlock(null,'clear')" class="font-semibold mt-0 w-[50%] hover:text-[#FFF] transition-colors text-lg">‧<a href="/TCC/tcc_website/dpt/index_isms.htm">
                   資安專區</a></li>
-                <li class="font-semibold mt-0 w-[50%] hover:text-[#FFF] transition-colors text-lg">‧<a href="/TCC/00_millieyu/20121009/" target="_blank">
+                <li @mouseover="handMenuBlock(null,'clear')" class="font-semibold mt-0 w-[50%] hover:text-[#FFF] transition-colors text-lg">‧<a href="/TCC/00_millieyu/20121009/" target="_blank">
                   SGS驗證專區</a></li>
-                <li class="font-semibold mt-2 w-[50%] hover:text-[#FFF] transition-colors text-lg">‧<a href="/TCC/00_millieyu/0827/index03-04.htm">
+                <li @mouseover="handMenuBlock(null,'clear')" class="font-semibold mt-2 w-[50%] hover:text-[#FFF] transition-colors text-lg">‧<a href="/TCC/00_millieyu/0827/index03-04.htm">
                   交流分享區</a></li>
-                <li class="font-semibold mt-2 w-[50%] hover:text-[#FFF] transition-colors text-lg">‧<a href="https://twm/OP/" target="_blank">
+                <li @mouseover="handMenuBlock(null,'clear')" class="font-semibold mt-2 w-[50%] hover:text-[#FFF] transition-colors text-lg">‧<a href="https://twm/OP/" target="_blank">
                   OP品牌專區</a></li>
-                <li class="font-semibold mt-2 w-[50%] hover:text-[#FFF] transition-colors text-lg">‧<a href="/TCC/00_millieyu/0827/index03-05.htm">
+                <li @mouseover="handMenuBlock(null,'clear')" class="font-semibold mt-2 w-[50%] hover:text-[#FFF] transition-colors text-lg">‧<a href="/TCC/00_millieyu/0827/index03-05.htm">
                   TWM專區</a></li>
-                <li class="font-semibold mt-2 w-[50%] hover:text-[#FFF] transition-colors text-lg">‧<a href="/公佈欄/各處長官mail發送名單/最新座位表/homepage/index.htm" target="_blank"> 
+                <li @mouseover="handMenuBlock(null,'clear')" class="font-semibold mt-2 w-[50%] hover:text-[#FFF] transition-colors text-lg">‧<a href="/公佈欄/各處長官mail發送名單/最新座位表/homepage/index.htm" target="_blank"> 
                   最新座位表</a></li>
-                <li class="font-semibold mt-2 w-[50%] hover:text-[#FFF] transition-colors text-lg">‧<a href="/TCC/00_millieyu/20140106/" target="_blank">
+                <li @mouseover="handMenuBlock(null,'clear')" class="font-semibold mt-2 w-[50%] hover:text-[#FFF] transition-colors text-lg">‧<a href="/TCC/00_millieyu/20140106/" target="_blank">
                   徵才訊息</a></li>
-				 <li class="font-semibold mt-2 w-[50%] hover:text-[#FFF] transition-colors text-lg">‧<a href="/公佈欄/服務規劃處/教育訓練科/網頁/客服報報1/各期刊物/index_bookcase.html" target="_blank">
+				        <li @mouseover="handMenuBlock(null,'clear')" class="font-semibold mt-2 w-[50%] hover:text-[#FFF] transition-colors text-lg">‧<a href="/公佈欄/服務規劃處/教育訓練科/網頁/客服報報1/各期刊物/index_bookcase.html" target="_blank">
                   客服報報</a></li> 
 				        <li @mouseover="handMenuBlock(null,'客服問問')" :class="['font-semibold', 'mt-2', 'w-[50%]', 'hover:text-[#FFF]', 'transition-colors', 'text-lg', {'text-white': MenuBlockTopic === '客服問問'}]">
                   ‧ 客服問問</li>

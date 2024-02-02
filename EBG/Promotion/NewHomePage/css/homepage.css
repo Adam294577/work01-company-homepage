@@ -141,6 +141,12 @@
     left: 10px;
     top: 10px;
   }
+  .LaptopView{
+    display: flex;
+  }
+  .PcView{
+    display: none;
+  }
   @media (min-width: 1540px) {
     .index-cont{
       width: 90%;
@@ -174,5 +180,11 @@
     .MenuBlockPosition_purple{
       left: 40px;
       top: 10px;
-    }      
+    }   
+    .LaptopView{
+      display: none;
+    }    
+    .PcView{
+      display: flex;
+    }   
   }
