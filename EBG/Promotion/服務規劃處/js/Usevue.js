@@ -17,6 +17,7 @@ window.onload = () =>{
                 {idx:3,key:'年度休假天數對照表', mainIs:'年度休假天數對照表',headerIs:'班表系統',navIs:'班表系統'},
                 {idx:4,key:'活動花絮', mainIs:'活動花絮',headerIs:'活動花絮',navIs:''},
                 {idx:5,key:'專案管理科', mainIs:'專案管理科',headerIs:'各科介紹',navIs:'各科介紹'},
+                {idx:6,key:'網站暨語音科', mainIs:'網站暨語音科',headerIs:'各科介紹',navIs:'各科介紹'},
             ]})
             const handPageCont = (el = null, key)=>{
                 if(HeaderCont.value === key && navIsCont.value === key) return

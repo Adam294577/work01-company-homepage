@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>服務規劃處首頁</title>
+    <script src="./js/tailwind.js"></script> 
+    <!-- 首頁輪播圖片用 -->
+    <link rel="stylesheet" href="./css/swiper.css"/>
+</head>
+<style>
+    #app{
+        width: 100%;
+        height: 100vh;
+        border: 1px solid green;
+        background: url('./img/index_bg.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .nav-Btn{
+        background: #FFF;
+    }
+    .nav-Btn.act{
+        background: #942d94;
+        color: #FFF
+    }
+    ::-webkit-scrollbar{
+        display: none;
+    }
+</style>
+<style>
+    /* swiper */
+    swiper-container {
+      width: 100%;
+      height: 100%;
+    }
+
+    swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+    }
+    swiper-container::part(button-prev),swiper-container::part(button-next) {
+        color: transparent;
+        background-image: url(./img/swiperArrow.png);
+        height: 100px;
+        width: 50px;
+        background-repeat: no-repeat;
+    } 
+    swiper-container::part(button-next){
+        transform: scaleX(-1);
+    }
+  </style>
+<body>
+<div id="app">
+    <div class="payload">
+
+    </div>
+    <header class="relative flex items-center border-b-white border-b-2">
+        <div @click="handPageCont(null,'index')" 
+            class="select-none text-3xl font-bold text-center w-[250px] ml-8 py-2 text-[#413c7e] flex items-center cursor-pointer">
+            <img class="mr-4" src="./img/logo.png" alt="">
+            <span>服務規劃處</span>    
+        </div>
+        <ul class="flex  absolute top-0 ml-[350px] space-x-8 mt-4">
+            <li @click="handPageCont(null,'各科介紹')" :class="['text-[#262155]', 'p-2', 'text-lg',  'hover:font-bold', 'cursor-pointer', {'font-bold' : HeaderCont === '各科介紹'}]">各科介紹</li>
+            <li @click="handPageCont(null,'班表系統')" :class="['text-[#262155]', 'p-2', 'text-lg',  'hover:font-bold', 'cursor-pointer', {'font-bold' : HeaderCont === '班表系統'}]">班表系統</li>
+            <li @click="handPageCont(null,'活動花絮')" :class="['text-[#262155]', 'p-2', 'text-lg',  'hover:font-bold', 'cursor-pointer', {'font-bold' : HeaderCont === '活動花絮'}]" @click="handPageCont(null, '活動花絮')">活動花絮</li>
+        </ul>
+        
+    </header>
+    <!-- 側面選單 -->
+    <nav class="ml-8  mt-8 transition-opacity">
+        <ul class="space-y-4 " v-show="navIsCont === '各科介紹'">
+            <li @click="handPageCont(null,'專案管理科')"
+            :class="['rounded-md', 'font-bold', 'text-center', 'h-[56px]', 'select-none','leading-[56px]', 'w-[200px]', 'cursor-pointer', 'hover:bg-[#942d94]', 'hover:text-white', 'transition-colors', 'duration-300','nav-Btn',{'act': MainCont === '專案管理科'}]">
+                專案管理科</li>
+            <li  @click="handPageCont(null,'網站暨語音科')"
+            :class="['rounded-md', 'font-bold', 'text-center', 'h-[56px]', 'select-none','leading-[56px]', 'w-[200px]', 'cursor-pointer', 'hover:bg-[#942d94]', 'hover:text-white', 'transition-colors', 'duration-300','nav-Btn',{'act': MainCont === '網站暨語音科'}]">
+                網站暨語音科</li>
+            <li 
+            :class="['rounded-md', 'font-bold', 'text-center', 'h-[56px]', 'select-none','leading-[56px]', 'w-[200px]', 'cursor-pointer', 'hover:bg-[#942d94]', 'hover:text-white', 'transition-colors', 'duration-300','nav-Btn']">
+                <a class="block h-full" href="https://ccweb-tpweb.tcs.com.tw/ccweb-ap/TTNT_Contactor/default.aspx?dept=AAJ3000" target="_blank">
+                    話務管理科</a></li>
+            <li 
+            :class="['rounded-md', 'font-bold', 'text-center', 'h-[56px]', 'select-none','leading-[56px]', 'w-[200px]', 'cursor-pointer', 'hover:bg-[#942d94]', 'hover:text-white', 'transition-colors', 'duration-300','nav-Btn']">
+                <a class="block h-full" href="https://ccweb-tpweb.tcs.com.tw/ccweb-ap/TTNT_Contactor/default.aspx?dept=AAJ2000" target="_blank">
+                    績效分析科</a></li>
+            <li 
+            :class="['rounded-md', 'font-bold', 'text-center', 'h-[56px]', 'select-none','leading-[56px]', 'w-[200px]', 'cursor-pointer', 'hover:bg-[#942d94]', 'hover:text-white', 'transition-colors', 'duration-300','nav-Btn']">
+                <a class="block h-full" href="https://ccweb-tpweb.tcs.com.tw/ccweb-ap/TTNT_Contactor/default.aspx?dept=AAJ6000" target="_blank">
+                    品質管理科</a></li>
+            <li 
+            :class="['rounded-md', 'font-bold', 'text-center', 'h-[56px]', 'select-none','leading-[56px]', 'w-[200px]', 'cursor-pointer', 'hover:bg-[#942d94]', 'hover:text-white', 'transition-colors', 'duration-300','nav-Btn']">
+                <a class="block h-full" href="https://ccweb-tpweb.tcs.com.tw/ccweb-ap/TTNT_Contactor/default.aspx?dept=AAJ4000" target="_blank">
+                    教育訓練科</a></li>
+        </ul>
+        <ul class="space-y-4" v-show="navIsCont === '班表系統'">
+            <li @click="handPageCont(null, '最新班表')"
+            :class="['rounded-md', 'font-bold', 'text-center', 'h-[56px]', 'select-none','leading-[56px]', 'w-[200px]', 'cursor-pointer', 'hover:bg-[#942d94]', 'hover:text-white', 'transition-colors', 'duration-300','nav-Btn',{'act': MainCont === '最新班表'}]">
+                最新班表</li>
+            <li @click="handPageCont(null, '年度休假天數對照表')"
+            :class="['rounded-md', 'font-bold', 'text-center', 'h-[56px]', 'select-none','leading-[56px]', 'w-[200px]', 'cursor-pointer', 'hover:bg-[#942d94]', 'hover:text-white', 'transition-colors', 'duration-300','nav-Btn',{'act': MainCont === '年度休假天數對照表'}]">
+                年度休假天數對照表</li>
+            <li 
+            :class="['rounded-md', 'font-bold', 'text-center','h-[56px]', 'select-none','leading-[56px]' , 'w-[200px]', 'cursor-pointer', 'hover:bg-[#942d94]', 'hover:text-white', 'transition-colors', 'duration-300','nav-Btn']">
+            <a class="block h-full" href="https://tcstm67.tcs.com.tw:9443/rcweb/" target="_blank">線上點名系統</a></li>
+            <li 
+            :class="['rounded-md', 'font-bold', 'text-center', 'h-[56px]', 'select-none','leading-[56px]', 'w-[200px]', 'cursor-pointer', 'hover:bg-[#942d94]', 'hover:text-white', 'transition-colors', 'duration-300','nav-Btn']">
+                <a class="block h-full" href="https://tcstm90.tcs.com.tw:9543/revrService/" target="_blank">
+                    預選休-【台北】</a></li>
+            <li 
+            :class="['rounded-md', 'font-bold', 'text-center', 'h-[56px]', 'select-none','leading-[56px]', 'w-[200px]', 'cursor-pointer', 'hover:bg-[#942d94]', 'hover:text-white', 'transition-colors', 'duration-300','nav-Btn']">
+                <a class="block h-full" href="https://tcs2apbk07.tcs.com.tw:9543/revrService/" target="_blank">
+                    預選休-【台中/高雄】</a></li>
+            <li 
+            :class="['rounded-md', 'font-bold', 'text-center', 'h-[56px]', 'select-none','leading-[56px]', 'w-[200px]', 'cursor-pointer', 'hover:bg-[#942d94]', 'hover:text-white', 'transition-colors', 'duration-300','nav-Btn']">
+                <a class="block h-full" href="/公佈欄/服務規劃處/網站規劃暨語音管理科/homepage/預選休系統/新版預選休操作手冊.pptx" target="_blank">
+                    預選休-【手冊】</a></li>                    
+            <li 
+            :class="['rounded-md', 'font-bold', 'text-center', 'h-[56px]', 'select-none','leading-[56px]', 'w-[200px]', 'cursor-pointer', 'hover:bg-[#942d94]', 'hover:text-white', 'transition-colors', 'duration-300','nav-Btn']">
+                <a class="block h-full" href="/公佈欄/服務規劃處/話務管理科/班表資料/調代班規則.doc" target="_blank">
+                    調代班原則</a></li>                    
+            <li 
+            :class="['rounded-md', 'font-bold', 'text-center', 'h-[56px]', 'select-none','leading-[56px]', 'w-[200px]', 'cursor-pointer', 'hover:bg-[#942d94]', 'hover:text-white', 'transition-colors', 'duration-300','nav-Btn']">
+                <a class="block h-full" href="/公佈欄/服務規劃處/話務管理科/班表資料/調代班電子化操作手冊.doc" target="_blank">
+                    電子調代班電子化操作手冊</a></li>                    
+
+        </ul>
+    </nav>
+    <!-- 服務規劃處-內容 -->
+    <!-- 寬80% -->
+    <main class="cont border-2 border-white w-[80%] rounded-lg absolute top-[100px] right-8 overflow-hidden" style="height: 80vh;" v-if="MainCont !== '活動花絮'">
+        <div class="bg-white h-full"  v-if="MainCont === 'index'">
+            <img src="./img/2023voe活動/01.jpg" class="w-[600px]  mx-auto hidden"  alt="">
+            <swiper-container class="w-[90%]" navigation="true" autoplay-delay="5000" autoplay-disable-on-interaction="false" slides-per-view="1" loop="true">
+                <swiper-slide class=""><img class="w-[1200px] h-[900px] scale-[0.7]" src="./img/2023voe活動/01.jpg" alt=""></swiper-slide>
+                <swiper-slide class=""><img class="w-[900px] h-[1200px] scale-[0.5]" src="./img/2023voe活動/02.jpg" alt=""></swiper-slide>
+                <swiper-slide class=""><img class="w-[900px] h-[1200px] scale-[0.5]" src="./img/2023voe活動/03.jpg" alt=""></swiper-slide>
+                <swiper-slide class=""><img class="w-[1200px] h-[900px] scale-[0.7]" src="./img/2023voe活動/04.jpg" alt=""></swiper-slide>
+                <swiper-slide class=""><img class="w-[675px] h-[1200px] scale-[0.5]" src="./img/2023voe活動/05.jpg" alt=""></swiper-slide>
+                <swiper-slide class=""><img class="w-[1200px] h-[675px] scale-[0.8]" src="./img/2023voe活動/06.jpg" alt=""></swiper-slide>
+              </swiper-container>
+              <a class="absolute left-[4%] bottom-8 z-50 inline-block w-[120px] py-2 text-center bg-[#942d94] text-white font-bold rounded-md" 
+              href="https://ccweb-tpweb.tcs.com.tw/公佈欄/服務規劃處/共同區/活動照片/2023/20230908VOE活動/index.html" target="_blank">
+                看更多</a>
+        </div>
+        <iframe v-if="MainCont === '最新班表'" class="relative z-20 w-[107%]  -left-[50px] bg-[#FFF]" name="iframe" width="100%" frameborder="0"  style="height: 85vh; padding-bottom: 2.5rem;" src="https://tcstm90.tcs.com.tw:9543/WFSWeb/WFS_Schedule.aspx"></iframe>
+        <iframe v-if="MainCont === '年度休假天數對照表'" class="relative z-20 bg-[#FFF] " name="iframe" width="100%"  frameborder="0" style="height: 85vh;" src="https://ccweb-tpweb.tcs.com.tw/公佈欄/服務規劃處/話務管理科/班表資料/2002_holiday.htm"></iframe>        
+        <!-- <iframe id="myIframe" v-if="MainCont === '專案管理科'" class="relative z-20 bg-[#FFF] pb-[200px]" name="iframe" width="100%"frameborder="0" style="height: 85vh; padding-bottom: 3.5rem;" src="https://ccweb-tpweb.tcs.com.tw/公佈欄/服務規劃處/專案管理科/homepage/main.htm"></iframe>      -->
+        <iframe id="myIframe" v-if="MainCont === '專案管理科'" class="relative z-20 bg-[#FFF] pb-[200px]" name="iframe" width="100%"frameborder="0" style="height: 85vh; padding-bottom: 3.5rem;" src="./專管科.htm"></iframe>     
+        <iframe id="myIframe" v-if="MainCont === '網站暨語音科'" class="relative z-20 bg-[#FFF] pb-[200px]" name="iframe" width="100%"frameborder="0" style="height: 85vh; padding-bottom: 3.5rem;" src="./網語科.htm"></iframe>     
+    </main>
+    <!-- 寬100% -->
+    <main   class="cont border-2 border-white w-[95%] rounded-lg absolute top-[100px] right-8 overflow-hidden" style="height: 80vh"  v-if="MainCont === '活動花絮'">
+        <iframe class="relative pl-[15rem] pt-[30px] bg-[#FFF]" name="iframe" width="100%" frameborder="0" style="height: 100vh;"  src="https://ccweb-tpweb.tcs.com.tw/公佈欄/服務規劃處/共同區/homepage/photo.htm"></iframe>
+    </main>
+    <footer>
+        <img class="fixed bottom-4 left-24 scale-125 opacity-75" src="./img/index_slogan.png" alt="">
+    </footer>
+</div>
+<!-- 圖片輪播 -->
+<script src="./js/swiper.js"></script>
+<!-- vue -->
+<script src="./js/vue.js"></script>
+<script src="./js/Usevue.js"></script>
+</body>
+</html>
