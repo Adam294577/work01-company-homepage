@@ -130,7 +130,7 @@
     top: -135px
   }
   .MenuBlockPosition_blue_Repair{
-    left: 100px;
+    left: 140px;
     top: 0px;
   }
   .MenuBlockPosition_blue_Meeting{
@@ -164,15 +164,16 @@
       top: -140px
     }
     .MenuBlockPosition_blue_Repair{
-      left: 150px;
+      left: 180px;
       top: -30px;
     }
     .MenuBlockPosition_blue_Meeting{
-      left: 80px;
+      left: 40px;
       top: 10px;
     }
     .MenuBlockPosition_purple{
-      left: 80px;
+      left: 40px;
       top: 10px;
-    }      
+    }   
+ 
   }
