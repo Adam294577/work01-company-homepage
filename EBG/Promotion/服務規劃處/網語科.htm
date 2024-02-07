@@ -38,9 +38,10 @@ a:active {
 	text-decoration: none;
 }
 .linkBox{
-  position: absolute;
-  right: 0px;
-  top: 60px;
+  position: fixed;
+  left: 3rem;
+  top: 5rem;
+  z-index: 10;
 }
 .linkBox a{
   display: block;
@@ -48,20 +49,58 @@ a:active {
   border-bottom: 0;
   margin-top: 0.5rem;
 }
+.member{
+  display: flex;  
+  width: 100%; 
+  flex-wrap: wrap;
+  justify-content: space-around;
+  position: relative;
+}
+.member table{
+  margin-top: 1rem;
+}
+@media (min-width: 1540px) {
+  .member{
+    flex-wrap: nowrap;
+  }  
+  .member table{
+  margin-top: 0rem;
+}
+}
+
+
+.outerweb{
+  margin-left: 200px;
+  margin-top: 2rem;
+  display: none;
+  border: 0;
+
+}
 </style>
 </head>
 <body>
 
-<table border="0">
-  <tr style="position: relative; z-index: 10;">
+<table class="linkBox" border="1" rules="all" style="display: inline-block; border: 0;">
+    <tr>
+      <td align="center" bgcolor="#F2F2F2"><strong>其他連結</strong></td>
+    </tr>
+    <tr>
+      <td bgcolor="#FDFFEE">
+        <span >
+          <a class="handDisplayUrl" data-key="member" href="#">網語科成員介紹</a>
+          <a class="handDisplayUrl" data-key="outerweb" href="#">外單位網站</a>
+          <a href="https://ccweb-tpweb.tcs.com.tw/公佈欄/服務規劃處/網站規劃暨語音管理科/CBG/系統建置排程表_彙整web.xlsx" target="_blank">系統排程表</a>   
+          <a href="https://ccweb-tpweb.tcs.com.tw/ccweb-ap/TTNT_Contactor/default.aspx?dept=AAJ5000" target="_blank">網語科通訊錄</a>   
+        </span>
+      </td>
+    </tr>
+  </table>
+<table class="member" border="0">
+  <tr style="position: relative;  z-index: 10;">
     <td height="39" align="center">
       <table width="812" border="0" align="left">
         <tr>
           <td height="44" align="center" background="img/bg_th.png"><strong> 服務規劃處_網站暨語音科窗口對照表</strong>
-            <span class="linkBox" style="position: absolute; border: 0; right: 30px;">
-              <a href="https://ccweb-tpweb.tcs.com.tw/公佈欄/服務規劃處/網站規劃暨語音管理科/CBG/系統建置排程表_彙整web.xlsx" target="_blank">系統排程表</a>   
-              <a href="https://ccweb-tpweb.tcs.com.tw/ccweb-ap/TTNT_Contactor/default.aspx?dept=AAJ5000" target="_blank">網語科通訊錄</a>   
-            </span>
           </td>
         </tr>
       </table>
@@ -71,7 +110,7 @@ a:active {
 
     <td height="49">
 
-      <table style="position: relative; left: 0.5rem; top: -15px;" width="800" border="1" rules="all">
+      <table style="position: relative; left: 0.5rem; top: -22px;" width="800" border="1" rules="all">
         <tr>
           <td align="center"><p>科主管: 
             林慧華<br>
@@ -96,218 +135,200 @@ a:active {
     </td>
   </tr>
 </table>
-<table width="100%" border="1" rules="all" style="border:1px #008000 solid;">
-  <tr>
-    <td width="50" align="center" bgcolor="#F2F2F2"> 組別</td>
-    <td width="150" align="center" bgcolor="#F2F2F2" > 姓名/聯絡方式</td>
-    <td width="603" align="center" bgcolor="#F2F2F2"> 負責內容說明</td>
-  </tr>
-  <tr>
-    <td rowspan="4" align="center" bgcolor="#FDFFEE"><strong><br />
-      網<br />
-      站<br />
-      語<br />
-      音<br />
-      規<br />
-      劃<br />
-      組</strong></td>
-    <td bgcolor="#FDFFEE">魏竹佑<br />
-      David Wei<br />
-      #21838<br />
+<div class="member member2">
+  <table border="1" rules="all" style="display: inline-block; border: 0;">
+    <tr>
+      <td colspan="4" align="center" bgcolor="#F2F2F2"><strong>網站語音規劃組</strong></td>
+    </tr>
+    <tr>
+      <td align="center" nowrap="nowrap" bgcolor="#F2F2F2"> 姓名/聯絡方式</td>
+      <td align="center" nowrap="nowrap" bgcolor="#F2F2F2"> 負責內容說明</td>
+      <td align="center" nowrap="nowrap" bgcolor="#F2F2F2"> 姓名/聯絡方式</td>
+      <td align="center" nowrap="nowrap" bgcolor="#F2F2F2"> 負責內容說明</td>
+    </tr>
+    <tr>
+      <td align="center" bgcolor="#FDFFEE">魏竹佑<br />
+        David Wei<br />
+        #21838<br />
       0987-440672</td>
-    <td bgcolor="#FDFFEE"><ul>
-      <li>網頁服務據點維護</li>
-      <li>CCWEB內網規劃</li>
-      <li>FB&amp;IG私訊維護窗口</li>
-      <li>內外網/APP手機資訊規劃及維護</li>
-      <li>EBG系統窗口(E)</li>
-      <li>網路OK辦(E)</li>
-      <li>CSW系統規劃(E)</li>
-      <li>網頁美工與印刷製作</li>
-      <li>CSW Email+Fax規劃維護</li>
-    </ul></td>
-  </tr>
-  <tr>
-    <td bgcolor="#FDFFEE">劉凱欣<br />
-      Anita Liu<br />
-      #21829<br />
+      <td nowrap="nowrap" bgcolor="#FDFFEE"><ul>
+        <li>網頁服務據點維護</li>
+        <li>CCWEB內網規劃</li>
+        <li>FB&amp;IG私訊維護窗口</li>
+        <li>內外網/APP手機資訊規劃及維護</li>
+        <li>EBG系統窗口(E)</li>
+        <li>網路OK辦(E)</li>
+        <li>CSW系統規劃(E)</li>
+        <li>網頁美工與印刷製作</li>
+        <li>CSW Email+Fax規劃維護</li>
+      </ul></td>
+      <td align="center" bgcolor="#FDFFEE">宋蕙雯<br />
+Sylvia Sung<br />
+#21847<br />
+0922-440653</td>
+      <td nowrap="nowrap" bgcolor="#FDFFEE"><ul>
+        <li>APP系統作業規劃</li>
+        <li>智能客服規劃</li>
+      </ul></td>
+    </tr>
+    <tr>
+      <td align="center" bgcolor="#FDFFEE">劉凱欣<br />
+        Anita Liu<br />
+        #21829<br />
       0922-447367</td>
-    <td bgcolor="#FDFFEE"><ul>
-      <li>點名系統規劃</li>
-      <li>預選休系統規劃</li>
-      <li>預選特休系統規劃</li>
-      <li>調班系統規劃</li>
-      <li>夜間回報與緊急小組系統規劃</li>
-      <li>雜購預算編列窗口</li>
-      <li>離機系統</li>
-      <li>智能客服<br />
-      </li>
-    </ul></td>
-  </tr>
-  <tr>
-    <td bgcolor="#FDFFEE"> 宋蕙雯<br />
-      Sylvia Sung<br />
-      #21847<br />
-      0922-440653</td>
-    <td bgcolor="#FDFFEE"><ul>
-      <li>APP系統作業規劃</li>
-      <li>智能客服規劃</li>
-    </ul></td>
-  </tr>
-  <tr>
-    <td bgcolor="#FDFFEE">吳尚軒(pt) <br />
-      #21863<br />
-    0930-158924</td>
-    <td bgcolor="#FDFFEE"><ul>
-      
-      <li>手機資訊維護</li>
-      <li>不定期協助美工與印刷製作事宜</li>
-      <li>EBG網頁公告更新</li>
-    </ul></td>
-  </tr>
-  <tr>
-    <td rowspan="9" align="center" bgcolor="#FFF0E1"><strong>流<br />
-      程<br />
-      改<br />
-      善<br />
-      組 </strong></td>
-    <td bgcolor="#FFF0E1">陳文宏<br />
-      Edward Chen<br />
-      #21832<br />
+      <td nowrap="nowrap" bgcolor="#FDFFEE"><ul>
+        <li>點名系統規劃</li>
+        <li>預選休系統規劃</li>
+        <li>預選特休系統規劃</li>
+        <li>調班系統規劃</li>
+        <li>夜間回報與緊急小組系統規劃</li>
+        <li>雜購預算編列窗口</li>
+        <li>離機系統</li>
+        <li>智能客服<br />
+          </li>
+      </ul></td>
+      <td align="center" bgcolor="#FDFFEE">吳尚軒(pt) <br />
+#21863<br />
+0930-158924</td>
+      <td nowrap="nowrap" bgcolor="#FDFFEE"><ul>
+        <li>手機資訊維護</li>
+        <li>不定期協助美工與印刷製作事宜</li>
+        <li>EBG網頁公告更新</li>
+      </ul></td>
+    </tr>
+  </table>
+  <table border="1" rules="all" style="display: inline-block; border: 0; margin-left: 1rem;">
+    <tr>
+      <td colspan="6" align="center" bgcolor="#F2F2F2"><strong>流程改善組 </strong></td>
+    </tr>
+    <tr>
+      <td align="center" nowrap="nowrap" bgcolor="#F2F2F2"> 姓名/聯絡方式</td>
+      <td align="center" nowrap="nowrap" bgcolor="#F2F2F2"> 負責內容說明</td>
+      <td align="center" nowrap="nowrap" bgcolor="#F2F2F2"> 姓名/聯絡方式</td>
+      <td align="center" nowrap="nowrap" bgcolor="#F2F2F2">負責內容說明</td>
+      <td align="center" nowrap="nowrap" bgcolor="#F2F2F2"> 姓名/聯絡方式</td>
+      <td align="center" nowrap="nowrap" bgcolor="#F2F2F2"> 負責內容說明</td>
+    </tr>
+    <tr>
+      <td align="center" bgcolor="#FFF0E1">陳文宏<br />
+        Edward Chen<br />
+        #21832<br />
       0922-440459</td>
-    <td bgcolor="#FFF0E1"><ul>
-      <li>SCMS查詢/異動系統功能規劃</li>
-      <li>OLM管理</li>
-      <li>E-mail上傳</li>
-      <li>CSW Fax in系統規劃</li>
-      <li>CBG TTnT Report Server</li>
-      <li>CBG CA 外撥/派件/報表系統</li>
-      <li>CRW 外撥/派件/報表</li>
-      <li>排位系統<br />
-      </li>
-    </ul></td>
-  </tr>
-  <tr>
-    <td bgcolor="#FFF0E1">林頎絜<br />
-      Yoko Lin<br />
-      #21830<br />
+      <td nowrap="nowrap" bgcolor="#FFF0E1"><ul>
+        <li>SCMS查詢/異動系統功能規劃</li>
+        <li>OLM管理</li>
+        <li>E-mail上傳</li>
+        <li>CSW Fax in系統規劃</li>
+        <li>CBG TTnT Report Server</li>
+        <li>CBG CA 外撥/派件/報表系統</li>
+        <li>CRW 外撥/派件/報表</li>
+        <li>排位系統<br />
+          </li>
+      </ul></td>
+      <td align="center" bgcolor="#FFF0E1">林士傑<br />
+        Sam Lin<br />
+        #21839<br />
+        0935-610729</td>
+      <td nowrap="nowrap" bgcolor="#FFF0E1"><ul>
+        <li>智慧服務平台功能規劃</li>
+        <li>各自助服務管道追蹤分析</li>
+        <li>行動客服APP滿意度調查分析</li>
+        <li>Data Mining</li>
+        <li>e帳單推廣成效分析</li>
+      </ul></td>
+      <td align="center" bgcolor="#FFF0E1">林婷蓁<br />
+        Jennie Lin<br />
+        #21821<br />
+        0922-440699</td>
+      <td nowrap="nowrap" bgcolor="#FFF0E1"><ul>
+        <li>Audit系統管理</li>
+        <li>ACTS系統管理</li>
+        <li>光碟影像系統規劃</li>
+        <li>OSC系統規劃</li>
+        <li>預付卡系統(CSW/SCMS)</li>
+      </ul></td>
+    </tr>
+    <tr>
+      <td align="center" bgcolor="#FFF0E1">林頎絜<br />
+        Yoko Lin<br />
+        #21830<br />
       0922-440476</td>
-    <td bgcolor="#FFF0E1"><ul>
-      <li>叫修系統</li>
-      <li>障礙簡訊</li>
-      <li>帳號權限管控</li>
-      <li>特殊管控系統</li>
-      <li>SCMS新申裝/續約</li>
-      <li>物聯網 IOTBS系統<br />
-      </li>
-    </ul></td>
-  </tr>
-  <tr>
-    <td bgcolor="#FFF0E1">李筱嵐<br />
-      Claire Lee<br />
-      #21822<br />
+      <td nowrap="nowrap" bgcolor="#FFF0E1"><ul>
+        <li>叫修系統</li>
+        <li>障礙簡訊</li>
+        <li>帳號權限管控</li>
+        <li>特殊管控系統</li>
+        <li>SCMS新申裝/續約</li>
+        <li>物聯網 IOTBS系統<br />
+          </li>
+      </ul></td>
+      <td align="center" bgcolor="#FFF0E1">楊淑如<br />
+        Beryl Yang<br />
+        #21841<br />
+        0922-440664</td>
+      <td nowrap="nowrap" bgcolor="#FFF0E1"><ul>
+        <li>流改會提案規劃協調作業</li>
+        <li>CBG CSW 月租型</li>
+        <li>CCHS系統功能規劃</li>
+        <li>CBG-維修平台&amp;商品保固維修服務</li>
+      </ul></td>
+      <td align="center" bgcolor="#FFF0E1">陳俊杰<br />
+        Johnson Chen <br />
+        #21831<br />
+        0922-443537</td>
+      <td nowrap="nowrap" bgcolor="#FFF0E1"><ul>
+        <li>IVR規劃</li>
+        <li>IVR報表維護<br />
+        </li>
+      </ul></td>
+    </tr>
+    <tr>
+      <td align="center" bgcolor="#FFF0E1">李筱嵐<br />
+        Claire Lee<br />
+        #21822<br />
       0935-449656</td>
-    <td bgcolor="#FFF0E1"><ul>
-      <li>CSS系統規劃</li>
-      <li>OSS系統相關業務</li>
-      <li>ISMS稽核作業<br />
-      </li>
-    </ul></td>
+      <td nowrap="nowrap" bgcolor="#FFF0E1"><ul>
+        <li>CSS系統規劃</li>
+        <li>OSS系統相關業務</li>
+        <li>ISMS稽核作業<br />
+          </li>
+      </ul></td>
+      <td align="center" bgcolor="#FFF0E1">李淑莉<br />
+        Amy Lee<br />
+        #21840<br />
+        0935-449676</td>
+      <td nowrap="nowrap" bgcolor="#FFF0E1"><ul>
+        <li>智能客服小my知識點維運優化</li>
+      </ul></td>
+      <td align="center" bgcolor="#FFF0E1">吳慧怡<br />
+        Doris Wu<br />
+        #21823<br />
+        0922-447971</td>
+      <td nowrap="nowrap" bgcolor="#FFF0E1"><ul>
+        <li>調改系統規劃</li>
+        <li>官網-用戶服務專區規劃</li>
+        <li>官網活動(e帳單/線上繳款活動)</li>
+        <li>LINE官方活動窗口</li>
+        <li>EC_OB系統規劃<br />
+        </li>
+      </ul></td>
+    </tr>
+  </table>
+</div>
+
+<table class="outerweb" border="1" rules="all">
+  <tr>
+    <td colspan="5" align="center" nowrap="nowrap" bgcolor="#F2F2F2"><strong>外單位網站</strong></td>
   </tr>
   <tr>
-    <td bgcolor="#FFF0E1">陳俊杰<br />
-      Johnson Chen <br />
-      #21831<br />
-      0922-443537</td>
-    <td bgcolor="#FFF0E1"><ul>
-      <li>IVR規劃</li>
-      <li>IVR報表維護<br />
-      </li>
-    </ul></td>
+    <td align="center" nowrap="nowrap" bgcolor="#F2F2F2">單位名稱</td>
+    <td align="center" nowrap="nowrap" bgcolor="#F2F2F2">樓層</td>
+    <td align="center" nowrap="nowrap" bgcolor="#F2F2F2" >網址</td>
+    <td align="center" nowrap="nowrap" bgcolor="#F2F2F2" >位址</td>
+    <td align="center" nowrap="nowrap" bgcolor="#F2F2F2">開放範圍&amp;權限名單</td>
   </tr>
   <tr>
-    <td bgcolor="#FFF0E1">吳慧怡<br />
-      Doris Wu<br />
-      #21823<br />
-      0922-447971</td>
-    <td bgcolor="#FFF0E1"><ul>
-      <li>調改系統規劃</li>
-      <li>官網-用戶服務專區規劃</li>
-      <li>官網活動(e帳單/線上繳款活動)</li>
-      <li>LINE官方活動窗口</li>
-      <li>EC_OB系統規劃<br />
-      </li>
-    </ul></td>
-  </tr>
-  <tr>
-    <td bgcolor="#FFF0E1">林士傑<br />
-      Sam Lin<br />
-      #21839<br />
-      0935-610729</td>
-    <td bgcolor="#FFF0E1"><ul>
-      <li>智慧服務平台功能規劃</li>
-      <li>各自助服務管道追蹤分析</li>
-      <li>行動客服APP滿意度調查分析</li>
-      <li>Data Mining</li>
-      <li>e帳單推廣成效分析<br />
-      </li>
-    </ul></td>
-  </tr>
-  <tr>
-    <td bgcolor="#FFF0E1">楊淑如<br />
-      Beryl Yang<br />
-      #21841<br />
-      0922-440664</td>
-    <td bgcolor="#FFF0E1"><ul>
-      <li>流改會提案規劃協調作業</li>
-      <li>CBG CSW 月租型</li>
-      <li>CCHS系統功能規劃</li>
-      <li>CBG-維修平台&amp;商品保固維修服務<br />
-      </li>
-    </ul></td>
-  </tr>
-  <tr>
-    <td bgcolor="#FFF0E1">李淑莉<br />
-      Amy Lee<br />
-      #21840<br />
-      0935-449676</td>
-    <td bgcolor="#FFF0E1"><ul>
-      <li>智能客服小my知識點維運優化<br />
-      </li>
-    </ul></td>
-  </tr>
-  <tr>
-    <td bgcolor="#FFF0E1">林婷蓁<br />
-      Jennie Lin<br />
-      #21821<br />
-      0922-440699</td>
-    <td bgcolor="#FFF0E1"><ul>
-      <li>Audit系統管理</li>
-      <li>ACTS系統管理</li>
-      <li>光碟影像系統規劃</li>
-      <li>OSC系統規劃</li>
-      <li>預付卡系統(CSW/SCMS)<br />
-      </li>
-    </ul></td>
-  </tr>
-</table>
-<br>
-<table width="100%" border="1" rules="all" style="border:1px #008000 solid;">
-  <tr>
-    <td width="50" align="center" nowrap="nowrap" bgcolor="#F2F2F2"> 組別</td>
-    <td width="150" align="center" nowrap="nowrap" bgcolor="#F2F2F2" > 單位名稱</td>
-    <td width="200" align="center" nowrap="nowrap" bgcolor="#F2F2F2"> 樓層</td>
-    <td width="249" align="center" nowrap="nowrap" bgcolor="#F2F2F2" >網址</td>
-    <td width="249" align="center" nowrap="nowrap" bgcolor="#F2F2F2" >位址</td>
-    <td align="center" nowrap="nowrap" bgcolor="#F2F2F2"><p>開放範圍&amp;權限名單</p></td>
-  </tr>
-  <tr>
-    <td rowspan="7" align="center" bgcolor="#ECFFFF"><strong>外<br />
-      單<br />
-      位<br />
-      網<br />
-      站</strong></td>
-    <td bgcolor="#ECFFFF">台灣大哥大同仁</td>
+    <td align="center" bgcolor="#ECFFFF">台灣大哥大同仁</td>
     <td bgcolor="#ECFFFF"><ul>
       <li>電信大樓</li>
     </ul></td>
@@ -318,7 +339,7 @@ a:active {
     </ul></td>
   </tr>
   <tr>
-    <td bgcolor="#ECFFFF">TWM經銷業務處</td>
+    <td align="center" bgcolor="#ECFFFF">TWM經銷業務處</td>
     <td bgcolor="#ECFFFF"><ul>
       <li>經銷業務處</li>
     </ul></td>
@@ -329,7 +350,7 @@ a:active {
     </ul></td>
   </tr>
   <tr>
-    <td bgcolor="#ECFFFF">帳催單位</td>
+    <td align="center" bgcolor="#ECFFFF">帳催單位</td>
     <td bgcolor="#ECFFFF"><ul>
       <li>湯城2號3樓之3</li>
       <li>台中6樓</li>
@@ -337,14 +358,16 @@ a:active {
     </ul></td>
     <td bgcolor="#ECFFFF"><a href="http://ccweb-tpweb:123/" target="_blank">http://ccweb-tpweb:123/ </a>(台北帳催)<br>
     <a href="http://tcs2ccweb:123/" target="_blank">http://tcs2ccweb:123/</a>(台中帳催)</td>
-    <td bgcolor="#ECFFFF"><p><a href="http://ccweb-tpweb:123/index_123.htm" target="_blank">http://ccweb-tpweb/index_123.htm </a>(台北)<br>
-    <a href="http://tcs2ccweb:123/index_123.htm" target="_blank">http://tcs2ccweb:123/index_123.htm/</a>(台中)</p></td>
+    <td bgcolor="#ECFFFF"><p>(台北)<br>
+      <a href="http://ccweb-tpweb:123/index_123.htm" target="_blank">http://ccweb-tpweb/index_123.htm </a><br>
+      (台中)<br>
+    <a href="http://tcs2ccweb:123/index_123.htm" target="_blank">http://tcs2ccweb:123/index_123.htm/</a></p></td>
     <td bgcolor="#ECFFFF"><ul>
       <li>連結</li>
     </ul></td>
   </tr>
   <tr>
-    <td bgcolor="#ECFFFF">銷售通訊資訊網</td>
+    <td align="center" bgcolor="#ECFFFF">銷售通訊資訊網</td>
     <td align="center" bgcolor="#ECFFFF">-</td>
     <td bgcolor="#ECFFFF"><ul>
       <li><a href="http://icsweb.taiwanmobile.com/ICSClientMain.aspx" target="_blank">銷售通訊資訊網</a></li>
@@ -357,6 +380,26 @@ a:active {
     </ul></td>
   </tr>
 </table>
-<br />
+<script>
+  window.onload =() =>{
+    // 切換內容
+    const memberDom = document.querySelectorAll('.member')
+    const outerwebDom = document.querySelector('.outerweb')
+    const handDisplayUrl = document.querySelectorAll('.handDisplayUrl')
+    const handDisplay = (el) =>{
+      let key = el.currentTarget.dataset.key
+      el.preventDefault();
+      if(key === 'member'){
+        memberDom.forEach(dom=> dom.style.display = 'flex')
+        outerwebDom.style.display = 'none'
+      }
+      if(key === 'outerweb'){
+        memberDom.forEach(dom=> dom.style.display = 'none')
+        outerwebDom.style.display = 'block'
+      }
+    }
+    handDisplayUrl.forEach(url=> url.addEventListener("click",handDisplay))
+  }
+</script>
 </body>
 </html>
