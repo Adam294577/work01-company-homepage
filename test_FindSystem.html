@@ -1,457 +1,773 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>台灣客服-我要找系統</title>
-    <link rel="Shortcut Icon" type="image/x-icon" href="/TCC/img/twmlogo.ico" />	
-    <link rel="stylesheet" href="./EBG/Promotion/NewHomePage/css/homepage.css">
+    <link rel="Shortcut Icon" type="image/x-icon" href="/TCC/img/twmlogo.ico" />
+    <link
+      rel="stylesheet"
+      href="./EBG/Promotion/NewHomePage/css/homepage.css"
+    />
     <script type="text/javascript" src="/ebg/js/jquery.min.js"></script>
-    <script type="text/javascript" src="/ccweb-ap/ebg/jquery/jquery.signalR-2.4.2.js"></script>		
-    <script src="./EBG/Promotion/NewHomePage/js/tailwind.js"></script> 
+    <script
+      type="text/javascript"
+      src="/ccweb-ap/ebg/jquery/jquery.signalR-2.4.2.js"
+    ></script>
+    <script src="./EBG/Promotion/NewHomePage/js/tailwind.js"></script>
   </head>
-<body>
-  <div id="app">
-      <div class="header pt-2 pb-2  bg-white fixed w-full z-20" >
-        <a href="./test.html">
-          <img class="absolute top-[5px] left-8 cursor-pointer" src="./EBG/Promotion/NewHomePage/img/logo.png" alt="">
+  <body>
+    <div id="app">
+      <div class="header pt-2 pb-2 bg-white fixed w-full z-20">
+        <a href="./index.html">
+          <img
+            class="absolute top-[5px] left-8 cursor-pointer"
+            src="./EBG/Promotion/NewHomePage/img/logo.png"
+            alt=""
+          />
         </a>
         <ul class="memu flex justify-end pt-2 mr-4">
-          <li class="text-[#2d338d] font-bold px-2 relative header-nav" >
-            <a href="/TCC/00_millieyu/ccweb_2007/other/sir/index_sir.htm" onclick="window.open(this.href,'','resizable=yes,location=no,menubar=no,scrollbars=yes,status=no,toolbar=no,fullscreen=no,dependent=no,width=860,height=760,left=60,top=90,status');return false" >
-            認識客服與大哥大長官</a>
-            <span class="absolute top-[32px] w-full inline-block h-[4px] left-0  rounded-md transition-colors duration-300"></span>
+          <li class="text-[#2d338d] font-bold px-2 relative header-nav">
+            <a
+              href="/TCC/00_millieyu/ccweb_2007/other/sir/index_sir.htm"
+              onclick="window.open(this.href,'','resizable=yes,location=no,menubar=no,scrollbars=yes,status=no,toolbar=no,fullscreen=no,dependent=no,width=860,height=760,left=60,top=90,status');return false"
+            >
+              認識客服與大哥大長官</a
+            >
+            <span
+              class="absolute top-[32px] w-full inline-block h-[4px] left-0 rounded-md transition-colors duration-300"
+            ></span>
           </li>
-          <li class="text-[#2d338d] font-bold  relative header-nav" >
-            <a href="/test_group.html" class="cursor-pointer block px-2">各單位組織圖</a>
-            <span class="absolute top-[32px] w-full inline-block h-[4px] left-0  rounded-md transition-colors duration-300"></span>
+          <li class="text-[#2d338d] font-bold relative header-nav">
+            <a href="./test_group.html" class="cursor-pointer block px-2"
+              >各單位組織圖</a
+            >
+            <span
+              class="absolute top-[32px] w-full inline-block h-[4px] left-0 rounded-md transition-colors duration-300"
+            ></span>
           </li>
-          <li class="text-[#2d338d] font-bold px-2 relative header-nav" >
-            <a href="/公佈欄/各處長官mail發送名單/mail發送名單.xlsx" target="_blank">
-            各長官mail發送清單</a>
-            <span class="absolute top-[32px] w-full inline-block h-[4px] left-0  rounded-md transition-colors duration-300"></span>
+          <li class="text-[#2d338d] font-bold px-2 relative header-nav">
+            <a
+              href="/公佈欄/各處長官mail發送名單/mail發送名單.xlsx"
+              target="_blank"
+            >
+              各長官mail發送清單</a
+            >
+            <span
+              class="absolute top-[32px] w-full inline-block h-[4px] left-0 rounded-md transition-colors duration-300"
+            ></span>
           </li>
-          <li class="text-[#2d338d] font-bold px-2 relative header-nav" >
+          <li class="text-[#2d338d] font-bold px-2 relative header-nav">
             <a href="https://tcsms.tcs.com.tw/owa" target="_blank">員工信箱</a>
-            <span class="absolute top-[32px] w-full inline-block h-[4px] left-0  rounded-md transition-colors duration-300"></span>
+            <span
+              class="absolute top-[32px] w-full inline-block h-[4px] left-0 rounded-md transition-colors duration-300"
+            ></span>
           </li>
         </ul>
         <div class="border-t-2 relative top-4"></div>
         <div class="flex justify-between pt-4 items-center">
           <section class="slogan xl:w-[70%] w-full pl-2">
             <div class="flex items-center">
-                <img class="inline-block object-fill" src="img/service.png" width="27" height="29"><span class="font-bold text-[#FF7300] text-[13pt]">企業使命(客訴政策)：專業、誠信、滿意</span>
-                <img class="inline-block object-fill" src="img/mission.png" width="30" height="28"><span class="font-bold text-[#FF7300] text-[13pt]">服務承諾：1.用心傾聽，展現專業 2.保護個資，建立信賴 3.尊重顧客，貼心服務 4.積極處理，有效解決 5.營造雙贏，獲得滿意</span>
+              <img
+                class="inline-block object-fill"
+                src="img/service.png"
+                width="27"
+                height="29"
+              /><span class="font-bold text-[#FF7300] text-[13pt]"
+                >企業使命(客訴政策)：專業、誠信、滿意</span
+              >
+              <img
+                class="inline-block object-fill"
+                src="img/mission.png"
+                width="30"
+                height="28"
+              /><span class="font-bold text-[#FF7300] text-[13pt]"
+                >服務承諾：1.用心傾聽，展現專業 2.保護個資，建立信賴
+                3.尊重顧客，貼心服務 4.積極處理，有效解決
+                5.營造雙贏，獲得滿意</span
+              >
             </div>
           </section>
-          <div class="searchBox   flex w-[25%] min-w-[350px] pr-3  justify-end space-x-2 min-h-[20px] pt-2 ml-8">
-            <select id="mycategory" class="border-2 min-w-[190px] ">
-              <option value="/TWM專區,/銷售專區,/EBG專區,/EBG-809專區,/EBG-直營諮詢,/申裝查核處,/行動網專區,/TWM專區/TWM專區/TWM專區-WEBAP/TWM專區-WEBAP-新手機資訊,/新創服務">全部</option>
+          <div
+            class="searchBox flex w-[25%] min-w-[350px] pr-3 justify-end space-x-2 min-h-[20px] pt-2 ml-8"
+          >
+            <select id="mycategory" class="border-2 min-w-[190px]">
+              <option
+                value="/TWM專區,/銷售專區,/EBG專區,/EBG-809專區,/EBG-直營諮詢,/申裝查核處,/行動網專區,/TWM專區/TWM專區/TWM專區-WEBAP/TWM專區-WEBAP-新手機資訊,/新創服務"
+              >
+                全部
+              </option>
               <option value="/TWM專區">【TWM專區】</option>
               <option value="/銷售專區">【銷售專區】</option>
               <option value="/EBG專區">【EBG專線-企業固網】</option>
               <option value="/EBG-809專區">【EBG專區-企業行動】</option>
               <option value="/EBG-直營諮詢">【EBG專區-直營諮詢】</option>
-              <option value="/TWM專區/TWM專區/TWM專區-WEBAP/TWM專區-WEBAP-新手機資訊">【手機資訊】</option>
+              <option
+                value="/TWM專區/TWM專區/TWM專區-WEBAP/TWM專區-WEBAP-新手機資訊"
+              >
+                【手機資訊】
+              </option>
               <option value="/新創服務">【新創服務】</option>
             </select>
-            <input id="SearchWord" type="text" value="" class="min-w-[150px] border-2 pl-2">
-            <button id="SearchBtn" class="min-w-[80px] py-1 border-2 flex items-center justify-center">
-              <img class="w-[20px]" src="./EBG/Promotion/NewHomePage/img/icons8-search.png" alt="">
-              <span class=" ml-1">搜尋</span>
+            <input
+              id="SearchWord"
+              type="text"
+              value=""
+              class="min-w-[150px] border-2 pl-2"
+            />
+            <button
+              id="SearchBtn"
+              class="min-w-[80px] py-1 border-2 flex items-center justify-center"
+            >
+              <img
+                class="w-[20px]"
+                src="./EBG/Promotion/NewHomePage/img/icons8-search.png"
+                alt=""
+              />
+              <span class="ml-1">搜尋</span>
             </button>
           </div>
         </div>
-
-
-
       </div>
-      <div class="ease-linear transition-transform duration-300 top-[110px] fixed right-0 w-[50px] h-[70px] bg-[#ff6700] px-2 pt-3  z-30 hover:translate-x-[-200px]">
+      <div
+        class="ease-linear transition-transform duration-300 top-[110px] fixed right-0 w-[50px] h-[70px] bg-[#ff6700] px-2 pt-3 z-30 hover:translate-x-[-200px]"
+      >
         <span class="text-white font-bold">線上</span>
-        <br>
+        <br />
         <span class="text-white font-bold">廣告</span>
-        <aside class="space-y-2 w-[200px] py-4 bg-[#FFF] absolute left-full top-0 px-[5px]">
-          <a href="/公佈欄/服務規劃處/教育訓練科/網頁/銷售榮譽榜.htm" target="_blank"
-          class="card block w-full overflow-hidden rounded-[10px]">
-            <img src="./EBG/Promotion/NewHomePage/img/card01.jpg" alt="">
+        <aside
+          class="space-y-2 w-[200px] py-4 bg-[#FFF] absolute left-full top-0 px-[5px]"
+        >
+          <a
+            href="/公佈欄/服務規劃處/教育訓練科/網頁/銷售榮譽榜.htm"
+            target="_blank"
+            class="card block w-full overflow-hidden rounded-[10px]"
+          >
+            <img src="./EBG/Promotion/NewHomePage/img/card01.jpg" alt="" />
           </a>
-          <a href="/公佈欄/服務規劃處/教育訓練科/網頁/客服報報1/各期刊物/index_bookcase.html" target="_blank"
-          class="card block w-full overflow-hidden rounded-[10px]">
-            <img src="./EBG/Promotion/NewHomePage/img/card02.jpg" alt="">
+          <a
+            href="/公佈欄/服務規劃處/教育訓練科/網頁/客服報報1/各期刊物/index_bookcase.html"
+            target="_blank"
+            class="card block w-full overflow-hidden rounded-[10px]"
+          >
+            <img src="./EBG/Promotion/NewHomePage/img/card02.jpg" alt="" />
           </a>
-          <a href="http://twmmisl03/Massage/" target="_blank"
-          class="card block w-full overflow-hidden rounded-[10px]">
-            <img src="./EBG/Promotion/NewHomePage/img/card03.jpg" alt="">
+          <a
+            href="http://twmmisl03/Massage/"
+            target="_blank"
+            class="card block w-full overflow-hidden rounded-[10px]"
+          >
+            <img src="./EBG/Promotion/NewHomePage/img/card03.jpg" alt="" />
           </a>
-          <a href="https://twmhealthysvr.taiwanmobile.com/es-twm/index_twm.html" target="_blank"
-          class="card block w-full overflow-hidden rounded-[10px]">
-            <img src="./EBG/Promotion/NewHomePage/img/card04.jpg" alt="">
+          <a
+            href="https://twmhealthysvr.taiwanmobile.com/es-twm/index_twm.html"
+            target="_blank"
+            class="card block w-full overflow-hidden rounded-[10px]"
+          >
+            <img src="./EBG/Promotion/NewHomePage/img/card04.jpg" alt="" />
           </a>
         </aside>
       </div>
-      <div class=" relative w-full">
+      <div class="relative w-full">
         <!-- 我要找系統-->
-        <div class="BulletinBoard min-w-[1150px] relative top-[150px] z-10 bg-[#eff2f7]  w-[80%]  mx-auto p-4 rounded-md" >
-          <h1 class=" flex items-center  relative justify-center">
-            <span class="inline-block rounded-[50%] w-[15px] h-[15px] bg-[#ff6700] mr-[15px]"></span>
+        <div
+          class="BulletinBoard min-w-[1150px] relative top-[150px] z-10 bg-[#eff2f7] w-[80%] mx-auto p-4 rounded-md"
+        >
+          <h1 class="flex items-center relative justify-center">
+            <span
+              class="inline-block rounded-[50%] w-[15px] h-[15px] bg-[#ff6700] mr-[15px]"
+            ></span>
             <span class="text-2xl font-bold">應用服務網 - 我要找系統</span>
-
-          </h1>  
-          <div class="BulletinBoardBtn border-2 flex items-center absolute left-1/2 -translate-x-1/2 bottom-4 overflow-hidden rounded-md cursor-pointer">
-            <a href="./test.html" class="duration-300 transition-colors  bg-white block w-[90px] h-[40px] leading-[40px] pl-[20px] text-[#000] text-[14px] font-bold">
-              返回</a>
-            <svg class="duration-300 transition-colors  bg-white font-bold pt-[7px] w-[15px] h-[30px] text-gray-600  absolute right-3 "><path  d="m5.5 3 5 5-5 5" stroke="currentColor"  fill="none"></path></svg>
+          </h1>
+          <div
+            class="BulletinBoardBtn border-2 flex items-center absolute left-1/2 -translate-x-1/2 bottom-4 overflow-hidden rounded-md cursor-pointer"
+          >
+            <a
+              href="./index.html"
+              class="duration-300 transition-colors bg-white block w-[90px] h-[40px] leading-[40px] pl-[20px] text-[#000] text-[14px] font-bold"
+            >
+              返回</a
+            >
+            <svg
+              class="duration-300 transition-colors bg-white font-bold pt-[7px] w-[15px] h-[30px] text-gray-600 absolute right-3"
+            >
+              <path d="m5.5 3 5 5-5 5" stroke="currentColor" fill="none"></path>
+            </svg>
           </div>
           <div class="cont flex justify-between">
-            <div class="multlist mt-2 flex flex-col w-[35%]  h-[700px] space-y-2">
+            <div
+              class="multlist mt-2 flex flex-col w-[35%] h-[700px] space-y-2"
+            >
               <div class="border-2 bg-white rounded-md h-[120px]">
-                <h1 class="font-bold text-center text-lg py-1 bg-[#EEE]">預選休</h1>
+                <h1 class="font-bold text-center text-lg py-1 bg-[#EEE]">
+                  預選休
+                </h1>
                 <ul class="p-2">
                   <li>
-                    <a href="https://tcstm90.tcs.com.tw:9543/revrService/" target="_blank"
-                    class="hover:text-[#ff6700] transition-colors duration-300" >
-                      【台北】</a>
-                    <a href="https://tcs2apbk07.tcs.com.tw:9543/revrService/" target="_blank"
-                    class="hover:text-[#ff6700] transition-colors duration-300" >
-                      【台中/高雄】</a>
+                    <a
+                      href="https://tcstm90.tcs.com.tw:9543/revrService/"
+                      target="_blank"
+                      class="hover:text-[#ff6700] transition-colors duration-300"
+                    >
+                      【台北】</a
+                    >
+                    <a
+                      href="https://tcs2apbk07.tcs.com.tw:9543/revrService/"
+                      target="_blank"
+                      class="hover:text-[#ff6700] transition-colors duration-300"
+                    >
+                      【台中/高雄】</a
+                    >
                   </li>
                   <li>
-                    <a href="https://ccmo.taiwanmobile.com/revrService/" target="_blank"
-                    class="hover:text-[#ff6700] transition-colors duration-300" >
-                      【My Day-WEB版】</a>
+                    <a
+                      href="https://ccmo.taiwanmobile.com/revrService/"
+                      target="_blank"
+                      class="hover:text-[#ff6700] transition-colors duration-300"
+                    >
+                      【My Day-WEB版】</a
+                    >
                     <span>(手機 / 家中電腦)</span>
                   </li>
-                  <li class="hover:text-[#ff6700] transition-colors duration-300">
-                    <a href="/公佈欄/服務規劃處/網站規劃暨語音管理科/homepage/預選休系統/新版預選休操作手冊.pptx" target="_blank"
-                    class="hover:text-[#ff6700] transition-colors duration-300" >
-                      【操作手冊】</a>
-                    </li>
-                </ul>
-              </div>
-              <div class="border-2 bg-white rounded-md h-[120px]">
-                <h1 class="font-bold text-center text-lg py-1 bg-[#EEE]">預選特休系統</h1>
-                <ul class="p-2">
-                  <li>
-                    <a href="https://tcstm90.tcs.com.tw:9543/LeavePlan/Home/Login" target="_blank"
-                    class="hover:text-[#ff6700] transition-colors duration-300" >
-                      【預選特休】</a>                    
-                      <a href="https://tcs2apbk07.tcs.com.tw:9543/LeavePlan/Home/Login" target="_blank"
-                      class="hover:text-[#ff6700] transition-colors duration-300" >
-                        【備援網址】</a> 
-                  </li>
-                  <li>操作手冊-
-                    <a href="/公佈欄/服務規劃處/網站規劃暨語音管理科/homepage/後勤特休系統/上線後教學手冊/預選特休_管理介面.pptx" target="_blank"
-                    class="hover:text-[#ff6700] transition-colors duration-300" >
-                      【管理職】</a> 
-                      <a href="/公佈欄/服務規劃處/網站規劃暨語音管理科/homepage/後勤特休系統/上線後教學手冊/預選特休_同仁頁面.pptx" target="_blank"
-                      class="hover:text-[#ff6700] transition-colors duration-300" >
-                        【同仁】</a> 
+                  <li
+                    class="hover:text-[#ff6700] transition-colors duration-300"
+                  >
+                    <a
+                      href="/公佈欄/服務規劃處/網站規劃暨語音管理科/homepage/預選休系統/新版預選休操作手冊.pptx"
+                      target="_blank"
+                      class="hover:text-[#ff6700] transition-colors duration-300"
+                    >
+                      【操作手冊】</a
+                    >
                   </li>
                 </ul>
               </div>
               <div class="border-2 bg-white rounded-md h-[120px]">
-                <h1 class="font-bold text-center text-lg py-1 bg-[#EEE]">排位系統</h1>
+                <h1 class="font-bold text-center text-lg py-1 bg-[#EEE]">
+                  預選特休系統
+                </h1>
                 <ul class="p-2">
                   <li>
-                    <a href="https://tcstm90.tcs.com.tw:9443/astweb/index.aspx" target="_blank"
-                    class="hover:text-[#ff6700] transition-colors duration-300" >
-                      【排位系統】</a> 
+                    <a
+                      href="https://tcstm90.tcs.com.tw:9543/LeavePlan/Home/Login"
+                      target="_blank"
+                      class="hover:text-[#ff6700] transition-colors duration-300"
+                    >
+                      【預選特休】</a
+                    >
+                    <a
+                      href="https://tcs2apbk07.tcs.com.tw:9543/LeavePlan/Home/Login"
+                      target="_blank"
+                      class="hover:text-[#ff6700] transition-colors duration-300"
+                    >
+                      【備援網址】</a
+                    >
                   </li>
                   <li>
-                    <a href="https://ccmo.taiwanmobile.com/WFSWeb/" target="_blank"
-                    class="hover:text-[#ff6700] transition-colors duration-300" >
-                      【My Day-WEB版】</a>
+                    操作手冊-
+                    <a
+                      href="/公佈欄/服務規劃處/網站規劃暨語音管理科/homepage/後勤特休系統/上線後教學手冊/預選特休_管理介面.pptx"
+                      target="_blank"
+                      class="hover:text-[#ff6700] transition-colors duration-300"
+                    >
+                      【管理職】</a
+                    >
+                    <a
+                      href="/公佈欄/服務規劃處/網站規劃暨語音管理科/homepage/後勤特休系統/上線後教學手冊/預選特休_同仁頁面.pptx"
+                      target="_blank"
+                      class="hover:text-[#ff6700] transition-colors duration-300"
+                    >
+                      【同仁】</a
+                    >
+                  </li>
+                </ul>
+              </div>
+              <div class="border-2 bg-white rounded-md h-[120px]">
+                <h1 class="font-bold text-center text-lg py-1 bg-[#EEE]">
+                  排位系統
+                </h1>
+                <ul class="p-2">
+                  <li>
+                    <a
+                      href="https://tcstm90.tcs.com.tw:9443/astweb/index.aspx"
+                      target="_blank"
+                      class="hover:text-[#ff6700] transition-colors duration-300"
+                    >
+                      【排位系統】</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="https://ccmo.taiwanmobile.com/WFSWeb/"
+                      target="_blank"
+                      class="hover:text-[#ff6700] transition-colors duration-300"
+                    >
+                      【My Day-WEB版】</a
+                    >
                     <span>(手機 / 家中電腦)</span>
                   </li>
-                  <li>操作手冊-
-                    <a href="/公佈欄/服務規劃處/網站規劃暨語音管理科/homepage/排位系統-系統管理者操作手冊.pptx" target="_blank"
-                    class="hover:text-[#ff6700] transition-colors duration-300" >
-                      【系統管理】</a>
-                      <a href="/公佈欄/服務規劃處/網站規劃暨語音管理科/homepage/排位系統-管理職操作手冊.pptx" target="_blank"
-                      class="hover:text-[#ff6700] transition-colors duration-300" >
-                        【管理職】</a>
-                    <a href="/公佈欄/服務規劃處/網站規劃暨語音管理科/homepage/排位系統-同仁版操作手冊.pptx" target="_blank"
-                    class="hover:text-[#ff6700] transition-colors duration-300" >
-                      【同仁】</a>
-                    </li>
+                  <li>
+                    操作手冊-
+                    <a
+                      href="/公佈欄/服務規劃處/網站規劃暨語音管理科/homepage/排位系統-系統管理者操作手冊.pptx"
+                      target="_blank"
+                      class="hover:text-[#ff6700] transition-colors duration-300"
+                    >
+                      【系統管理】</a
+                    >
+                    <a
+                      href="/公佈欄/服務規劃處/網站規劃暨語音管理科/homepage/排位系統-管理職操作手冊.pptx"
+                      target="_blank"
+                      class="hover:text-[#ff6700] transition-colors duration-300"
+                    >
+                      【管理職】</a
+                    >
+                    <a
+                      href="/公佈欄/服務規劃處/網站規劃暨語音管理科/homepage/排位系統-同仁版操作手冊.pptx"
+                      target="_blank"
+                      class="hover:text-[#ff6700] transition-colors duration-300"
+                    >
+                      【同仁】</a
+                    >
+                  </li>
                 </ul>
               </div>
-              
-                <div class="border-2 bg-white rounded-md h-[120px]">
-                  <h1 class="font-bold text-center text-lg py-1 bg-[#EEE]">夜間安全回報系統</h1>
-                  <ul class="p-2">
-                    <li>
-                      <a href="https://tcstm90.tcs.com.tw:9443/nsrWeb/index.aspx" target="_blank"
-                      class="hover:text-[#ff6700] transition-colors duration-300" >
-                        【夜間安全回報】</a>
-                        <a href="https://tcs2apbk07.tcs.com.tw:9443/nsrWeb/index.aspx" target="_blank"
-                        class="hover:text-[#ff6700] transition-colors duration-300" >
-                          【備援網址】</a>
-                      </li>
-                      <li>
-                        <a href="https://ccmo.taiwanmobile.com/WFSWeb/" target="_blank"
-                        class="hover:text-[#ff6700] transition-colors duration-300" >
-                          【My Day-WEB版】</a>
-                        <span>(手機 / 家中電腦)</span>
-                      </li>
-                  </ul>
-                </div>
-                <div class="border-2 bg-white rounded-md h-[120px]">
-                  <h1 class="font-bold text-center text-lg py-1 bg-[#EEE]">調班系統</h1>
-                  <ul class="p-2">
-                    <li>
-                      <a href="https://tcstm90.tcs.com.tw:9543/WFSWeb/login_form.aspx" target="_blank"
-                      class="hover:text-[#ff6700] transition-colors duration-300" >
-                        【調班系統】</a>
-                     </li>
-                    <li>
-                      <a href="https://ccmo.taiwanmobile.com/WFSWeb/" target="_blank"
-                      class="hover:text-[#ff6700] transition-colors duration-300" >
-                        【My Day-WEB版】</a>
-                      <span>(手機 / 家中電腦)</span>
-                    </li>
-                  </ul>
-                </div>
 
-             
-            </div>
-            <div class="multlist mt-2 flex flex-col w-[35%] ml-[1%]  h-[700px] space-y-2">
               <div class="border-2 bg-white rounded-md h-[120px]">
-                <h1 class="font-bold text-center text-lg py-1 bg-[#EEE]">大家來找碴-TWM</h1>
+                <h1 class="font-bold text-center text-lg py-1 bg-[#EEE]">
+                  夜間安全回報系統
+                </h1>
                 <ul class="p-2">
                   <li>
-                    <a href="https://ccweb-tpweb.tcs.com.tw/TCC/de_index.htm" target="_blank"
-                    class="hover:text-[#ff6700] transition-colors duration-300" >
-                      【大家來找碴】</a>
+                    <a
+                      href="https://tcstm90.tcs.com.tw:9443/nsrWeb/index.aspx"
+                      target="_blank"
+                      class="hover:text-[#ff6700] transition-colors duration-300"
+                    >
+                      【夜間安全回報】</a
+                    >
+                    <a
+                      href="https://tcs2apbk07.tcs.com.tw:9443/nsrWeb/index.aspx"
+                      target="_blank"
+                      class="hover:text-[#ff6700] transition-colors duration-300"
+                    >
+                      【備援網址】</a
+                    >
                   </li>
                   <li>
-                    <a href="http://tcs2ccweb/TCC/de_index.htm" target="_blank"
-                    class="hover:text-[#ff6700] transition-colors duration-300" >
-                      【備援網址】</a>
+                    <a
+                      href="https://ccmo.taiwanmobile.com/WFSWeb/"
+                      target="_blank"
+                      class="hover:text-[#ff6700] transition-colors duration-300"
+                    >
+                      【My Day-WEB版】</a
+                    >
+                    <span>(手機 / 家中電腦)</span>
                   </li>
                 </ul>
               </div>
               <div class="border-2 bg-white rounded-md h-[120px]">
-                <h1 class="font-bold text-center text-lg py-1 bg-[#EEE]">TWM內網建議平台</h1>
+                <h1 class="font-bold text-center text-lg py-1 bg-[#EEE]">
+                  調班系統
+                </h1>
                 <ul class="p-2">
                   <li>
-                    <a href="https://ccweb-tpweb.tcs.com.tw/ccweb-ap/DEBUGWeb/Style/Block1.aspx?Block=10" target="_blank"
-                    class="hover:text-[#ff6700] transition-colors duration-300" >
-                    【台北】</a>                    
-                    <a href="https://ccweb-tpweb.tcs.com.tw/ccweb-ap/DEBUGWeb/Style/Block1.aspx?Block=11" target="_blank"
-                    class="hover:text-[#ff6700] transition-colors duration-300" >
-                    【台中】</a>
-                    <a href="https://ccweb-tpweb.tcs.com.tw/ccweb-ap/DEBUGWeb/Style/Block1.aspx?Block=12" target="_blank"
-                    class="hover:text-[#ff6700] transition-colors duration-300" >
-                    【高雄】</a>
-                    </li>
-                  <li>
-                    <a href="/TCC/00_millieyu/0827/img/TWM內網建議平台-使用手冊.pptx" target="_blank"
-                    class="hover:text-[#ff6700] transition-colors duration-300" >
-                    【操作手冊】</a>  
-                  </li>
-                </ul>
-              </div>
-              <div class="border-2 bg-white rounded-md h-[120px]">
-                <h1 class="font-bold text-center text-lg py-1 bg-[#EEE]">提案與系統排程查詢</h1>
-                <ul class="p-2">
-                  <li>
-                    <a href="https://tcstm67.tcs.com.tw:9443/pi/" target="_blank"
-                    class="hover:text-[#ff6700] transition-colors duration-300" >
-                    【流程改善提案系統】</a>  
+                    <a
+                      href="https://tcstm90.tcs.com.tw:9543/WFSWeb/login_form.aspx"
+                      target="_blank"
+                      class="hover:text-[#ff6700] transition-colors duration-300"
+                    >
+                      【調班系統】</a
+                    >
                   </li>
                   <li>
-                    <a href="/公佈欄/服務規劃處/網站規劃暨語音管理科/CBG/流程改善提案系統操作手冊.pptx" target="_blank"
-                    class="hover:text-[#ff6700] transition-colors duration-300" >
-                    【操作手冊】</a>  
+                    <a
+                      href="https://ccmo.taiwanmobile.com/WFSWeb/"
+                      target="_blank"
+                      class="hover:text-[#ff6700] transition-colors duration-300"
+                    >
+                      【My Day-WEB版】</a
+                    >
+                    <span>(手機 / 家中電腦)</span>
                   </li>
-                </ul>
-              </div>
-              <div class="border-2 bg-white rounded-md h-[120px]">
-                <h1 class="font-bold text-center text-lg py-1 bg-[#EEE]">系統排程表</h1>
-                <ul class="p-2">
-                  <li>
-                    <a href="/公佈欄/服務規劃處/網站規劃暨語音管理科/CBG/系統建置排程表_彙整web.xlsx" target="_blank"
-                    class="hover:text-[#ff6700] transition-colors duration-300" >
-                    【CBG】</a>   
-                    <a href="/公佈欄/服務規劃處/網站規劃暨語音管理科/EBG/系統建置排程表_彙整web.xlsx" target="_blank"
-                    class="hover:text-[#ff6700] transition-colors duration-300" >
-                    【EBG】</a>   
-                    </li>
                 </ul>
               </div>
             </div>
-            <div class="singlelist mt-2 flex w-[25%] ml-[4%] min-w-[320px]  h-[600px]">
+            <div
+              class="multlist mt-2 flex flex-col w-[35%] ml-[1%] h-[700px] space-y-2"
+            >
+              <div class="border-2 bg-white rounded-md h-[120px]">
+                <h1 class="font-bold text-center text-lg py-1 bg-[#EEE]">
+                  大家來找碴-TWM
+                </h1>
+                <ul class="p-2">
+                  <li>
+                    <a
+                      href="https://ccweb-tpweb.tcs.com.tw/TCC/de_index.htm"
+                      target="_blank"
+                      class="hover:text-[#ff6700] transition-colors duration-300"
+                    >
+                      【大家來找碴】</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="http://tcs2ccweb/TCC/de_index.htm"
+                      target="_blank"
+                      class="hover:text-[#ff6700] transition-colors duration-300"
+                    >
+                      【備援網址】</a
+                    >
+                  </li>
+                </ul>
+              </div>
+              <div class="border-2 bg-white rounded-md h-[120px]">
+                <h1 class="font-bold text-center text-lg py-1 bg-[#EEE]">
+                  TWM內網建議平台
+                </h1>
+                <ul class="p-2">
+                  <li>
+                    <a
+                      href="https://ccweb-tpweb.tcs.com.tw/ccweb-ap/DEBUGWeb/Style/Block1.aspx?Block=10"
+                      target="_blank"
+                      class="hover:text-[#ff6700] transition-colors duration-300"
+                    >
+                      【台北】</a
+                    >
+                    <a
+                      href="https://ccweb-tpweb.tcs.com.tw/ccweb-ap/DEBUGWeb/Style/Block1.aspx?Block=11"
+                      target="_blank"
+                      class="hover:text-[#ff6700] transition-colors duration-300"
+                    >
+                      【台中】</a
+                    >
+                    <a
+                      href="https://ccweb-tpweb.tcs.com.tw/ccweb-ap/DEBUGWeb/Style/Block1.aspx?Block=12"
+                      target="_blank"
+                      class="hover:text-[#ff6700] transition-colors duration-300"
+                    >
+                      【高雄】</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/TCC/00_millieyu/0827/img/TWM內網建議平台-使用手冊.pptx"
+                      target="_blank"
+                      class="hover:text-[#ff6700] transition-colors duration-300"
+                    >
+                      【操作手冊】</a
+                    >
+                  </li>
+                </ul>
+              </div>
+              <div class="border-2 bg-white rounded-md h-[120px]">
+                <h1 class="font-bold text-center text-lg py-1 bg-[#EEE]">
+                  提案與系統排程查詢
+                </h1>
+                <ul class="p-2">
+                  <li>
+                    <a
+                      href="https://tcstm67.tcs.com.tw:9443/pi/"
+                      target="_blank"
+                      class="hover:text-[#ff6700] transition-colors duration-300"
+                    >
+                      【流程改善提案系統】</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/公佈欄/服務規劃處/網站規劃暨語音管理科/CBG/流程改善提案系統操作手冊.pptx"
+                      target="_blank"
+                      class="hover:text-[#ff6700] transition-colors duration-300"
+                    >
+                      【操作手冊】</a
+                    >
+                  </li>
+                </ul>
+              </div>
+              <div class="border-2 bg-white rounded-md h-[120px]">
+                <h1 class="font-bold text-center text-lg py-1 bg-[#EEE]">
+                  系統排程表
+                </h1>
+                <ul class="p-2">
+                  <li>
+                    <a
+                      href="/公佈欄/服務規劃處/網站規劃暨語音管理科/CBG/系統建置排程表_彙整web.xlsx"
+                      target="_blank"
+                      class="hover:text-[#ff6700] transition-colors duration-300"
+                    >
+                      【CBG】</a
+                    >
+                    <a
+                      href="/公佈欄/服務規劃處/網站規劃暨語音管理科/EBG/系統建置排程表_彙整web.xlsx"
+                      target="_blank"
+                      class="hover:text-[#ff6700] transition-colors duration-300"
+                    >
+                      【EBG】</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div
+              class="singlelist mt-2 flex w-[25%] ml-[4%] min-w-[320px] h-[600px]"
+            >
               <div class="border-2 bg-white rounded-md">
-                <h1 class="font-bold text-center text-lg py-1 bg-[#EEE]">其他查詢</h1>
+                <h1 class="font-bold text-center text-lg py-1 bg-[#EEE]">
+                  其他查詢
+                </h1>
                 <ul class="p-2 space-y-1">
                   <li>
-                  <a href="https://tcstm67.tcs.com.tw:9443/rcweb/" target="_blank"
-                  class="hover:text-[#ff6700] transition-colors duration-300" >
-                  【線上點名】</a>  
+                    <a
+                      href="https://tcstm67.tcs.com.tw:9443/rcweb/"
+                      target="_blank"
+                      class="hover:text-[#ff6700] transition-colors duration-300"
+                    >
+                      【線上點名】</a
+                    >
                   </li>
                   <li>
-                  <a href="https://tcstm67.tcs.com.tw:9402/" target="_blank"
-                  class="hover:text-[#ff6700] transition-colors duration-300" >
-                  【離機單】</a>  
-                    </li>
-                  <li>
-                  <a href="https://tcstm90.tcs.com.tw:9443/NEA/login_form.aspx" target="_blank"
-                  class="hover:text-[#ff6700] transition-colors duration-300" >
-                  【績效考核系統】</a>  
+                    <a
+                      href="https://tcstm67.tcs.com.tw:9402/"
+                      target="_blank"
+                      class="hover:text-[#ff6700] transition-colors duration-300"
+                    >
+                      【離機單】</a
+                    >
                   </li>
                   <li>
-                  <a href="https://edoc.pcdc.com.tw/speed30/Account/SSOLoginRequest" target="_blank"
-                  class="hover:text-[#ff6700] transition-colors duration-300" >
-                  【公文管理系統】</a>  
-                   </li>
-                  <li>
-                  <a href="https://twm/InfoE/" target="_blank"
-                  class="hover:text-[#ff6700] transition-colors duration-300" >
-                  【資訊需求系統】</a>  
+                    <a
+                      href="https://tcstm90.tcs.com.tw:9443/NEA/login_form.aspx"
+                      target="_blank"
+                      class="hover:text-[#ff6700] transition-colors duration-300"
+                    >
+                      【績效考核系統】</a
+                    >
                   </li>
                   <li>
-                  <a href="https://twm/EtrainV3/SSO.aspx" target="_blank"
-                  class="hover:text-[#ff6700] transition-colors duration-300" >
-                  【教育訓練】</a>  
-                   </li>
-                  <li>
-                  <a href="https://ccweb-tpweb.tcs.com.tw/TCC/00_millieyu/0827/index02-main02-01.htm" target="_blank"
-                  class="hover:text-[#ff6700] transition-colors duration-300" >
-                  【Terminal Server-- 特殊軟體共享平台】</a>  
-                   </li>
-                  <li>
-                  <a href="https://ccweb-tpweb.tcs.com.tw/TCC/00_millieyu/0827/index02-main02-06.htm" target="_blank"
-                  class="hover:text-[#ff6700] transition-colors duration-300" >
-                  【計數器報表】</a>  
-                   </li>
-                  <li>
-                  <a href="http://twmmisl03/Massage/Info.aspx?MenuID=765" target="_blank"
-                  class="hover:text-[#ff6700] transition-colors duration-300" >
-                  【按摩登記系統】</a>  
-                   </li>
-                  <li>
-                  <a href="https://tcs2ssoap.tcs.com.tw:9443/" target="_blank"
-                  class="hover:text-[#ff6700] transition-colors duration-300" >
-                  【帳號整合系統】</a>  
+                    <a
+                      href="https://edoc.pcdc.com.tw/speed30/Account/SSOLoginRequest"
+                      target="_blank"
+                      class="hover:text-[#ff6700] transition-colors duration-300"
+                    >
+                      【公文管理系統】</a
+                    >
                   </li>
                   <li>
-                  <a href="https://twm/Media/" target="_blank"
-                  class="hover:text-[#ff6700] transition-colors duration-300" >
-                  【TWM媒體剪報系統】</a>  
+                    <a
+                      href="https://twm/InfoE/"
+                      target="_blank"
+                      class="hover:text-[#ff6700] transition-colors duration-300"
+                    >
+                      【資訊需求系統】</a
+                    >
                   </li>
                   <li>
-                  <a href="https://ccweb-tpweb.tcs.com.tw/ebg/Chrome_FAQ.html" target="_blank"
-                  class="hover:text-[#ff6700] transition-colors duration-300" >
-                  【預設Chrome瀏覽器FAQ】</a>  
+                    <a
+                      href="https://twm/EtrainV3/SSO.aspx"
+                      target="_blank"
+                      class="hover:text-[#ff6700] transition-colors duration-300"
+                    >
+                      【教育訓練】</a
+                    >
                   </li>
                   <li>
-                  <a href="https://webhr.taiwanmobile.com/" target="_blank"
-                  class="hover:text-[#ff6700] transition-colors duration-300" >
-                  【薪資查詢】</a>  
-                   </li>
-                  <li>
-                  <a href="https://ccweb-tpweb.tcs.com.tw/ccweb-ap/tcc/DailyBriefing/index.aspx" target="_blank"
-                  class="hover:text-[#ff6700] transition-colors duration-300" >
-                  【新版值星簡報-管理介面】</a>  
+                    <a
+                      href="https://ccweb-tpweb.tcs.com.tw/TCC/00_millieyu/0827/index02-main02-01.htm"
+                      target="_blank"
+                      class="hover:text-[#ff6700] transition-colors duration-300"
+                    >
+                      【Terminal Server-- 特殊軟體共享平台】</a
+                    >
                   </li>
                   <li>
-                  <a href="https://ccweb-tpweb.tcs.com.tw/ccweb-ap/tcc/Proposal_CS/Index.aspx" target="_blank"
-                  class="hover:text-[#ff6700] transition-colors duration-300" >
-                  【會簽暨MEMO管理系統】</a>  
+                    <a
+                      href="https://ccweb-tpweb.tcs.com.tw/TCC/00_millieyu/0827/index02-main02-06.htm"
+                      target="_blank"
+                      class="hover:text-[#ff6700] transition-colors duration-300"
+                    >
+                      【計數器報表】</a
+                    >
                   </li>
                   <li>
-                  <a href="https://twmhealthysvr.taiwanmobile.com/es-twm/index_twm.html" target="_blank"
-                  class="hover:text-[#ff6700] transition-colors duration-300" >
-                  【健康管理系統】</a>  
-                   </li>
-                  <li>
-                  <a href="/公佈欄/服務規劃處/網站規劃暨語音管理科/AI_KM" target="_blank"
-                  class="hover:text-[#ff6700] transition-colors duration-300" >
-                  【知識點總檔】</a>  
+                    <a
+                      href="http://twmmisl03/Massage/Info.aspx?MenuID=765"
+                      target="_blank"
+                      class="hover:text-[#ff6700] transition-colors duration-300"
+                    >
+                      【按摩登記系統】</a
+                    >
                   </li>
                   <li>
-                    <a href="https://twm/OP/Downloads.html#content-3" target="_blank"
-                    class="hover:text-[#ff6700] transition-colors duration-300" >
-                    【TWM桌布】</a>  
-                    </li> 
-                    <li>
-                      <a href="/公佈欄/系統處/html/systembak.html" target="_blank"
-                      class="hover:text-[#ff6700] transition-colors duration-300" >
-                      【系統備援網址】</a>  
-                       </li>                                     
+                    <a
+                      href="https://tcs2ssoap.tcs.com.tw:9443/"
+                      target="_blank"
+                      class="hover:text-[#ff6700] transition-colors duration-300"
+                    >
+                      【帳號整合系統】</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="https://twm/Media/"
+                      target="_blank"
+                      class="hover:text-[#ff6700] transition-colors duration-300"
+                    >
+                      【TWM媒體剪報系統】</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="https://ccweb-tpweb.tcs.com.tw/ebg/Chrome_FAQ.html"
+                      target="_blank"
+                      class="hover:text-[#ff6700] transition-colors duration-300"
+                    >
+                      【預設Chrome瀏覽器FAQ】</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="https://webhr.taiwanmobile.com/"
+                      target="_blank"
+                      class="hover:text-[#ff6700] transition-colors duration-300"
+                    >
+                      【薪資查詢】</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="https://ccweb-tpweb.tcs.com.tw/ccweb-ap/tcc/DailyBriefing/index.aspx"
+                      target="_blank"
+                      class="hover:text-[#ff6700] transition-colors duration-300"
+                    >
+                      【新版值星簡報-管理介面】</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="https://ccweb-tpweb.tcs.com.tw/ccweb-ap/tcc/Proposal_CS/Index.aspx"
+                      target="_blank"
+                      class="hover:text-[#ff6700] transition-colors duration-300"
+                    >
+                      【會簽暨MEMO管理系統】</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="https://twmhealthysvr.taiwanmobile.com/es-twm/index_twm.html"
+                      target="_blank"
+                      class="hover:text-[#ff6700] transition-colors duration-300"
+                    >
+                      【健康管理系統】</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/公佈欄/服務規劃處/網站規劃暨語音管理科/AI_KM"
+                      target="_blank"
+                      class="hover:text-[#ff6700] transition-colors duration-300"
+                    >
+                      【知識點總檔】</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="https://twm/OP/Downloads.html#content-3"
+                      target="_blank"
+                      class="hover:text-[#ff6700] transition-colors duration-300"
+                    >
+                      【TWM桌布】</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/公佈欄/系統處/html/systembak.html"
+                      target="_blank"
+                      class="hover:text-[#ff6700] transition-colors duration-300"
+                    >
+                      【系統備援網址】</a
+                    >
+                  </li>
                 </ul>
               </div>
             </div>
-
-    
           </div>
         </div>
-        
-
-        
-
 
         <!-- 首頁背景色塊高度 -->
-        <div class="overflow-hidden flex flex-wrap   w-full absolute left-0 top-0 -z-10">
-          <img class="absolute z-10  animation-org-1" src="./EBG/Promotion/NewHomePage/img/bg2.png" alt="">
-          <img class="absolute z-10  animation-org-2" src="./EBG/Promotion/NewHomePage/img/bg3.png" alt="">
-          <img class="absolute top-[-150px] left-[50px] z-10  animation-org-3" src="./EBG/Promotion/NewHomePage/img/bg1.png" alt="">
-          <img class="absolute z-10 right-20 top-[20rem] animation-light-org-1" src="./EBG/Promotion/NewHomePage/img/bg1.png" alt="">
+        <div
+          class="overflow-hidden flex flex-wrap w-full absolute left-0 top-0 -z-10"
+        >
+          <img
+            class="absolute z-10 animation-org-1"
+            src="./EBG/Promotion/NewHomePage/img/bg2.png"
+            alt=""
+          />
+          <img
+            class="absolute z-10 animation-org-2"
+            src="./EBG/Promotion/NewHomePage/img/bg3.png"
+            alt=""
+          />
+          <img
+            class="absolute top-[-150px] left-[50px] z-10 animation-org-3"
+            src="./EBG/Promotion/NewHomePage/img/bg1.png"
+            alt=""
+          />
+          <img
+            class="absolute z-10 right-20 top-[20rem] animation-light-org-1"
+            src="./EBG/Promotion/NewHomePage/img/bg1.png"
+            alt=""
+          />
 
-          <div class="bgBlock relative z-0 ogange bg-[#ff6700] w-3/5 "></div>
-          <div class="bgBlock relative z-0 green bg-[#0eaa7d] w-2/5 "></div>
+          <div class="bgBlock relative z-0 ogange bg-[#ff6700] w-3/5"></div>
+          <div class="bgBlock relative z-0 green bg-[#0eaa7d] w-2/5"></div>
           <div class="relative z-0 ogange bg-[#ff6700] w-3/5 h-[587px]"></div>
-          <div class="relative z-0 green bg-[#ff9b0b] w-2/5 h-[587px]"   ></div>
+          <div class="relative z-0 green bg-[#ff9b0b] w-2/5 h-[587px]"></div>
           <!-- <div class="relative z-20 blue bg-[#9985ff] w-3/5 h-[250px] overflow-hidden">
             <img class="absolute  top-[-200px] animation-blue-1" src="./EBG/Promotion/NewHomePage/img/bg3.png" alt="">
           </div>
           <div class="relative z-20 light-ogange bg-[#ff9b0b] w-2/5 h-[250px] "></div> -->
-          <div class="footerBlock relative z-0 pink bg-[#f893bf] w-full"   ></div>
+          <div class="footerBlock relative z-0 pink bg-[#f893bf] w-full"></div>
         </div>
       </div>
-
-
-
-    
-  </div>
-  <script>
+    </div>
+    <script>
       // 搜尋功能
-        const searchWordInput = document.querySelector('#SearchWord');
-        const searchBtn = document.querySelector('#SearchBtn');
-        const categorySelect = document.querySelector("#mycategory");
-        let isSearchFocus = false;
+      const searchWordInput = document.querySelector("#SearchWord");
+      const searchBtn = document.querySelector("#SearchBtn");
+      const categorySelect = document.querySelector("#mycategory");
+      let isSearchFocus = false;
 
-        searchWordInput.addEventListener('focus', () => {
-          isSearchFocus = true;
-        });
+      searchWordInput.addEventListener("focus", () => {
+        isSearchFocus = true;
+      });
 
-        searchWordInput.addEventListener('blur', () => {
-          isSearchFocus = false;
-        });
+      searchWordInput.addEventListener("blur", () => {
+        isSearchFocus = false;
+      });
 
-        function submitSearch() {
-          let keyword = searchWordInput.value.trim().replace(" ", "&");
-          let searchCategory = categorySelect.value;
-        
-          if (keyword !== '') {
-            const searchUrl = `http://172.19.1.22/tornado/result.aspx?keyword=${encodeURIComponent(keyword)}&searchCategory=${encodeURIComponent(searchCategory)}&action=1`;
-            window.open(searchUrl);
-          }
+      function submitSearch() {
+        let keyword = searchWordInput.value.trim().replace(" ", "&");
+        let searchCategory = categorySelect.value;
+
+        if (keyword !== "") {
+          const searchUrl = `http://172.19.1.22/tornado/result.aspx?keyword=${encodeURIComponent(
+            keyword
+          )}&searchCategory=${encodeURIComponent(searchCategory)}&action=1`;
+          window.open(searchUrl);
         }
+      }
 
-        window.addEventListener("keydown", (e) => {
-          if (e.keyCode === 13 && isSearchFocus) {
-            submitSearch();
-          }
-        });
-
-        searchBtn.addEventListener("click", () => {
+      window.addEventListener("keydown", (e) => {
+        if (e.keyCode === 13 && isSearchFocus) {
           submitSearch();
-        });
+        }
+      });
 
-
-  </script>    
-</body>
+      searchBtn.addEventListener("click", () => {
+        submitSearch();
+      });
+    </script>
+  </body>
 </html>

@@ -63,8 +63,8 @@ window.onload = () =>{
                 {year:2020 ,date:'109/09/03',title:'【2021年度訓練需求問卷調查~活動開跑】填卷期間9/3~9/9《主 管 版》',url:'#'},
                 {year:2020 ,date:'109/06/17',title:'內網【標準作業】改版使用滿意度調查',url:'#'},
                 {year:2020 ,date:'109/04/24',title:'【訓練電子報 - 第33期】好速學習專區，學習的好工具!!',url:'https://ccweb-tpweb.tcs.com.tw/公佈欄/服務規劃處/教育訓練科/網頁/訓練電子報/202004.html'},
-                {year:2020 ,date:'109/04/23',title:'【好速e學習】銷售達人分享',url:'#'},
-                {year:2020 ,date:'109/03/05',title:'台灣大哥大-總經理的話',url:'#'},
+                {year:2020 ,date:'109/04/23',title:'【好速e學習】銷售達人分享',url:'https://ccweb-tpweb.tcs.com.tw/公佈欄/服務規劃處/教育訓練科/網頁/微學習/好速/好速e學習.htm'},
+                {year:2020 ,date:'109/03/05',title:'台灣大哥大-總經理的話',url:'https://ccweb-tpweb.tcs.com.tw/TCC/00_millieyu/20200305/index.html'},
                 {year:2020 ,date:'109/01/20',title:'【訓練電子報 - 第32期】新年新計劃~就從今天開始!',url:'https://ccweb-tpweb.tcs.com.tw/公佈欄/服務規劃處/教育訓練科/網頁/訓練電子報/202001封面.html'},
             ]})
             HistoryDataRender = computed(()=>{
@@ -72,7 +72,7 @@ window.onload = () =>{
                 let data = HistoryData.data
                 let result = []
                 result = data.filter(item=>{
-                    if(year === item.year) return item
+                    if(year === item.year && item.url === '#') return item
                 })
                 return result
             })

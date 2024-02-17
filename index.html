@@ -5,10 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>台灣客服INTRANET</title>
-  <link rel="Shortcut Icon" type="image/x-icon" href="/TCC/img/twmlogo.ico" />	
   <link rel="stylesheet" href="./EBG/Promotion/NewHomePage/css/homepage.css">
-  <script type="text/javascript" src="/ebg/js/jquery.min.js"></script>
-  <script type="text/javascript" src="/ccweb-ap/ebg/jquery/jquery.signalR-2.4.2.js"></script>		
   <script src="./EBG/Promotion/NewHomePage/js/tailwind.js"></script> 
 </head>
 <body>
@@ -22,7 +19,7 @@
             <span class="absolute top-[32px] w-full inline-block h-[4px] left-0  rounded-md transition-colors duration-300"></span>
           </li>
           <li class="text-[#2d338d] font-bold  relative header-nav" >
-            <a href="/test_group.html" class="cursor-pointer block px-2">各單位組織圖</a>
+            <a href="./test_group.html" class="cursor-pointer block px-2">各單位組織圖</a>
             <span class="absolute top-[32px] w-full inline-block h-[4px] left-0  rounded-md transition-colors duration-300"></span>
           </li>
           <li class="text-[#2d338d] font-bold px-2 relative header-nav" >
@@ -65,9 +62,6 @@
             </button>
           </div>
         </div>
-
-
-
       </div>
       <div class="ease-linear transition-transform duration-300 top-[110px] fixed right-0 w-[50px] h-[70px] bg-[#ff6700] px-2 pt-3  z-30 hover:translate-x-[-200px]">
         <span class="text-white font-bold">線上</span>
@@ -223,9 +217,9 @@
               <h2 class=" font-bold mt-1  pl-2 py-1 text-center text-xl text-white border-b-[1px] border-[#fff]">應用服務網</h2>
               <ul class="px-4 pt-1 flex flex-wrap">
                 
-                <li @mouseover="handMenuBlock(null,'clear')" class="font-semibold mt-0 w-[50%] hover:text-[#FFF] transition-colors text-lg">‧<a href="/test_FindSystem.html" onClick="insert_log('Ccweb首頁','Ccweb首頁','我要找系統')"  style="cursor:pointer;">
+                <li @mouseover="handMenuBlock(null,'clear')" class="font-semibold mt-0 w-[50%] hover:text-[#FFF] transition-colors text-lg">‧<a href="./test_FindSystem.html" onClick="insert_log('Ccweb首頁','Ccweb首頁','我要找系統')"  style="cursor:pointer;">
                   我要找系統</a></li>
-                <li @mouseover="handMenuBlock(null,'clear')" class="font-semibold mt-0 w-[50%] hover:text-[#FFF] transition-colors text-lg">‧<a href="/test_WorkLeave.html" onClick="insert_log('Ccweb首頁','Ccweb首頁','我要請假')">
+                <li @mouseover="handMenuBlock(null,'clear')" class="font-semibold mt-0 w-[50%] hover:text-[#FFF] transition-colors text-lg">‧<a href="./test_WorkLeave.html" onClick="insert_log('Ccweb首頁','Ccweb首頁','我要請假')">
                   我要請假</a></li>
                 <li @mouseover="handMenuBlock(null,'clear')" class="font-semibold mt-2 w-[50%] hover:text-[#FFF] transition-colors text-lg">‧<a href="/公佈欄/服務規劃處/品管科/Homepage/quality/new/index.html" target="_blank" onClick="insert_log('Ccweb首頁','Ccweb首頁','我的績效')">
                   我的績效</a></li>
@@ -298,7 +292,7 @@
                   <span class="inline-block rounded-[50%] w-[15px] h-[15px] bg-[#ff6700] mr-[15px]"></span>
                   <span class="text-2xl font-bold">TTNT即時訊息</span>
                   <div class="articleBtn border-2 flex items-center absolute right-0">
-                    <a href="/test_TTNTHistroy.html" 
+                    <a href="./test_TTNTHistroy.html" 
                     class="duration-300 transition-colors  bg-white block w-[90px] h-[30px] pt-[4px] pl-[15px] text-[#888] text-[14px]">
                       看更多</a>
                     <svg class="duration-300 transition-colors  bg-white font-bold pt-[7px] w-[15px] h-[30px] text-gray-600  absolute right-3 "><path  d="m5.5 3 5 5-5 5" stroke="currentColor"  fill="none"></path></svg>
@@ -411,52 +405,6 @@
   </div>
   <script src="./EBG/Promotion/NewHomePage/js/vue.js"></script>
   <script src="./EBG/Promotion/NewHomePage/js/Usevue.js"></script>
-  <script>
-// 取得登入帳號 - 請勿編輯
- 	var srToken1 = ""; //連線 SignalR Hub 前先取得 TokenCenter 認證的 Token
- 	var IsUseAuth = $("#txtIsUseAuth").val();
- 	var srToken1 = ""; //連線 SignalR Hub 前先取得 TokenCenter 認證的 Token
- 	if (IsUseAuth == "Y") {
- 	console.log('account=' + $("#txtapAccount").val() + ", passsword=" + $("#txtapPwd").val());
- 	srToken1 = GetToken($("#txtapAccount").val(), $("#txtapPwd").val());
- 	}
- 	console.log('srToken1=' + srToken1);
- 	var regSignalRNameTWM = "TTNT-CCWEB-Q"; //註冊一個聊天室的名稱
- 	
- 	var connection1 = $.hubConnection("http://localhost:6100");
- 	
- 	connection1.qs = { 'ClientApName': regSignalRNameTWM, 'CentralToken': srToken1, 'useAuth': IsUseAuth }; //ClientApName:幫Client AP 命名, CenterToken:要認證的Token
- 	connection1.logging = true; //開啟 signalr console log(開啟在Browser可以監控紀錄)
- 	
- 	var myCon1Hub = connection1.createHubProxy('EtdHub');
- 	
- 	//定義讓 SignalR Hub 呼叫的方法﹐至少要定義一個方法
- 	myCon1Hub.on('AlterMsg', function (message) {
- 	console.log('由 Server 回傳的訊息：' + message);
- 	$('#txtRece1').val(message);
- 	});
- 	
- 	connection1.start().done(function () {
- 	console.log("connected, transport = " + connection1.transport.name + ", connection ID=" + connection1.id);
- 	//取得 PC 上 NT Account
- 	myCon1Hub.invoke("GetNtAccount").done(function (rtnValue) {
- 	console.log("取得登入NT Accont");
- 	if (rtnValue.Code == "00") {
- 	agent_id = rtnValue.Data;
- 	console.log('agent_id' + agent_id);
- 	} else {
- 	console.log("rtnValue.Code=" + rtnValue.Code + ", rtnValue.Msg=" + rtnValue.Msg);
- 	}
- 	}).fail(function (e) {
- 	console.log("call GetNtAccount() error." + e);
- 	});
- 	 
- 	}).fail(function (er) {
- 	console.log("signalr 連線失敗。" + er);
- 	});
- 	// 取得登入帳號 - 請勿編輯	
-</script>
+
 </body>
 </html>
-<script type="text/javascript" src="/ebg/js/questionnaire.js"></script>
-<script type="text/javascript" src="/ccweb-ap/ebg/ajax_log.js"></script>

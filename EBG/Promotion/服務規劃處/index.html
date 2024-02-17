@@ -34,6 +34,9 @@
     .swiperImg{
         transform: scale(0.7);
     }
+    .navBox{
+        width: 270px;
+    }
     .activity{
         padding-left: 2rem;
         padding-top: 15px;
@@ -44,7 +47,10 @@
     }   
     .activity{
         padding-left: 10rem;
-    }        
+    }  
+    .navBox{
+        width: 350px;
+    }          
     }   
 </style>
 <style>
@@ -95,63 +101,63 @@
         </ul>
     </header>
     <!-- 側面選單 -->
-    <nav class="ml-8  mt-8 transition-opacity">
+    <nav class="mt-10 navBox flex justify-center transition-opacity">
         <ul class="space-y-4 " v-show="navIsCont === '各科介紹'">
             <li 
-            :class="['rounded-md', 'font-bold', 'text-center', 'h-[56px]', 'select-none','leading-[56px]', 'w-[200px]', 'cursor-pointer', 'hover:bg-[#FF7300]', 'hover:text-white', 'transition-colors', 'duration-300','nav-Btn']">
+            :class="['rounded-md', 'font-bold', 'pl-4', 'h-[56px]', 'select-none','leading-[56px]', 'w-[200px]', 'cursor-pointer', 'hover:bg-[#FF7300]', 'hover:text-white', 'transition-colors', 'duration-300','nav-Btn']">
             <!-- 專案管理科 -->
             <a class="block" href="https://ccweb-tpweb.tcs.com.tw/公佈欄/服務規劃處/專案管理科/homepage/main.htm" target="_blank">專案管理科</a>
         </li>
             <li 
-            :class="['rounded-md', 'font-bold', 'text-center', 'h-[56px]', 'select-none','leading-[56px]', 'w-[200px]', 'cursor-pointer', 'hover:bg-[#FF7300]', 'hover:text-white', 'transition-colors', 'duration-300','nav-Btn']">
+            :class="['rounded-md', 'font-bold', 'pl-4', 'h-[56px]', 'select-none','leading-[56px]', 'w-[200px]', 'cursor-pointer', 'hover:bg-[#FF7300]', 'hover:text-white', 'transition-colors', 'duration-300','nav-Btn']">
             <a class="block" href="./網語科.htm" target="_blank">網站暨語音科</a></li>
             <li 
-            :class="['rounded-md', 'font-bold', 'text-center', 'h-[56px]', 'select-none','leading-[56px]', 'w-[200px]', 'cursor-pointer', 'hover:bg-[#FF7300]', 'hover:text-white', 'transition-colors', 'duration-300','nav-Btn']">
+            :class="['rounded-md', 'font-bold', 'pl-4', 'h-[56px]', 'select-none','leading-[56px]', 'w-[200px]', 'cursor-pointer', 'hover:bg-[#FF7300]', 'hover:text-white', 'transition-colors', 'duration-300','nav-Btn']">
             <!-- <a class="block" href="https://ccweb-tpweb.tcs.com.tw/公佈欄/服務規劃處/績效分析科/homepage/main.htm" target="_blank">績效分析科</a> -->
             <a class="block" href="./績效分析科.htm" target="_blank">績效分析科</a>
         </li>                
             <li 
-            :class="['rounded-md', 'font-bold', 'text-center', 'h-[56px]', 'select-none','leading-[56px]', 'w-[200px]', 'cursor-pointer', 'hover:bg-[#FF7300]', 'hover:text-white', 'transition-colors', 'duration-300','nav-Btn']">
+            :class="['rounded-md', 'font-bold', 'pl-4', 'h-[56px]', 'select-none','leading-[56px]', 'w-[200px]', 'cursor-pointer', 'hover:bg-[#FF7300]', 'hover:text-white', 'transition-colors', 'duration-300','nav-Btn']">
                 <a class="block h-full" href="https://ccweb-tpweb.tcs.com.tw/ccweb-ap/TTNT_Contactor/default.aspx?dept=AAJ3000" target="_blank">
                     話務管理科</a></li>
             <li 
-            :class="['rounded-md', 'font-bold', 'text-center', 'h-[56px]', 'select-none','leading-[56px]', 'w-[200px]', 'cursor-pointer', 'hover:bg-[#FF7300]', 'hover:text-white', 'transition-colors', 'duration-300','nav-Btn']">
+            :class="['rounded-md', 'font-bold', 'pl-4', 'h-[56px]', 'select-none','leading-[56px]', 'w-[200px]', 'cursor-pointer', 'hover:bg-[#FF7300]', 'hover:text-white', 'transition-colors', 'duration-300','nav-Btn']">
                 <a class="block h-full" href="https://ccweb-tpweb.tcs.com.tw/ccweb-ap/TTNT_Contactor/default.aspx?dept=AAJ6000" target="_blank">
                     品質管理科</a></li>
             <li 
-            :class="['rounded-md', 'font-bold', 'text-center', 'h-[56px]', 'select-none','leading-[56px]', 'w-[200px]', 'cursor-pointer', 'hover:bg-[#FF7300]', 'hover:text-white', 'transition-colors', 'duration-300','nav-Btn']">
+            :class="['rounded-md', 'font-bold', 'pl-4', 'h-[56px]', 'select-none','leading-[56px]', 'w-[200px]', 'cursor-pointer', 'hover:bg-[#FF7300]', 'hover:text-white', 'transition-colors', 'duration-300','nav-Btn']">
                 <a class="block h-full" href="https://ccweb-tpweb.tcs.com.tw/ccweb-ap/TTNT_Contactor/default.aspx?dept=AAJ4000" target="_blank">
                     教育訓練科</a></li>
         </ul>
         <ul class="space-y-4" v-show="navIsCont === '班表系統'">
             <li @click="handPageCont(null, '最新班表')"
-            :class="['rounded-md', 'font-bold', 'text-center', 'h-[56px]', 'select-none','leading-[56px]', 'w-[200px]', 'cursor-pointer', 'hover:bg-[#FF7300]', 'hover:text-white', 'transition-colors', 'duration-300','nav-Btn',{'act': MainCont === '最新班表'}]">
+            :class="['rounded-md', 'font-bold', 'pl-4', 'h-[56px]', 'select-none','leading-[56px]', 'w-[200px]', 'cursor-pointer', 'hover:bg-[#FF7300]', 'hover:text-white', 'transition-colors', 'duration-300','nav-Btn',{'act': MainCont === '最新班表'}]">
                 最新班表</li>
             <li @click="handPageCont(null, '年度休假天數對照表')"
-            :class="['rounded-md', 'font-bold', 'text-center', 'h-[56px]', 'select-none','leading-[56px]', 'w-[200px]', 'cursor-pointer', 'hover:bg-[#FF7300]', 'hover:text-white', 'transition-colors', 'duration-300','nav-Btn',{'act': MainCont === '年度休假天數對照表'}]">
+            :class="['rounded-md', 'font-bold', 'pl-4', 'h-[56px]', 'select-none','leading-[56px]', 'w-[200px]', 'cursor-pointer', 'hover:bg-[#FF7300]', 'hover:text-white', 'transition-colors', 'duration-300','nav-Btn',{'act': MainCont === '年度休假天數對照表'}]">
                 年度休假天數對照表</li>
             <li 
-            :class="['rounded-md', 'font-bold', 'text-center','h-[56px]', 'select-none','leading-[56px]' , 'w-[200px]', 'cursor-pointer', 'hover:bg-[#FF7300]', 'hover:text-white', 'transition-colors', 'duration-300','nav-Btn']">
+            :class="['rounded-md', 'font-bold', 'pl-4','h-[56px]', 'select-none','leading-[56px]' , 'w-[200px]', 'cursor-pointer', 'hover:bg-[#FF7300]', 'hover:text-white', 'transition-colors', 'duration-300','nav-Btn']">
             <a class="block h-full" href="https://tcstm67.tcs.com.tw:9443/rcweb/" target="_blank">
                 線上點名系統</a></li>
             <li 
-            :class="['rounded-md', 'font-bold', 'text-center', 'h-[56px]', 'select-none','leading-[56px]', 'w-[200px]', 'cursor-pointer', 'hover:bg-[#FF7300]', 'hover:text-white', 'transition-colors', 'duration-300','nav-Btn']">
+            :class="['rounded-md', 'font-bold', 'pl-4', 'h-[56px]', 'select-none','leading-[56px]', 'w-[200px]', 'cursor-pointer', 'hover:bg-[#FF7300]', 'hover:text-white', 'transition-colors', 'duration-300','nav-Btn']">
                 <a class="block h-full" href="https://tcstm90.tcs.com.tw:9543/revrService/" target="_blank">
                     預選休-【台北】</a></li>
             <li 
-            :class="['rounded-md', 'font-bold', 'text-center', 'h-[56px]', 'select-none','leading-[56px]', 'w-[200px]', 'cursor-pointer', 'hover:bg-[#FF7300]', 'hover:text-white', 'transition-colors', 'duration-300','nav-Btn']">
+            :class="['rounded-md', 'font-bold', 'pl-4', 'h-[56px]', 'select-none','leading-[56px]', 'w-[200px]', 'cursor-pointer', 'hover:bg-[#FF7300]', 'hover:text-white', 'transition-colors', 'duration-300','nav-Btn']">
                 <a class="block h-full" href="https://tcs2apbk07.tcs.com.tw:9543/revrService/" target="_blank">
                     預選休-【台中/高雄】</a></li>
             <li 
-            :class="['rounded-md', 'font-bold', 'text-center', 'h-[56px]', 'select-none','leading-[56px]', 'w-[200px]', 'cursor-pointer', 'hover:bg-[#FF7300]', 'hover:text-white', 'transition-colors', 'duration-300','nav-Btn']">
+            :class="['rounded-md', 'font-bold', 'pl-4', 'h-[56px]', 'select-none','leading-[56px]', 'w-[200px]', 'cursor-pointer', 'hover:bg-[#FF7300]', 'hover:text-white', 'transition-colors', 'duration-300','nav-Btn']">
                 <a class="block h-full" href="/公佈欄/服務規劃處/網站規劃暨語音管理科/homepage/預選休系統/新版預選休操作手冊.pptx" target="_blank">
                     預選休-【手冊】</a></li>                    
             <li 
-            :class="['rounded-md', 'font-bold', 'text-center', 'h-[56px]', 'select-none','leading-[56px]', 'w-[200px]', 'cursor-pointer', 'hover:bg-[#FF7300]', 'hover:text-white', 'transition-colors', 'duration-300','nav-Btn']">
+            :class="['rounded-md', 'font-bold', 'pl-4', 'h-[56px]', 'select-none','leading-[56px]', 'w-[200px]', 'cursor-pointer', 'hover:bg-[#FF7300]', 'hover:text-white', 'transition-colors', 'duration-300','nav-Btn']">
                 <a class="block h-full" href="/公佈欄/服務規劃處/話務管理科/班表資料/調代班規則.doc" target="_blank">
                     調代班原則</a></li>                    
             <li 
-            :class="['rounded-md', 'font-bold', 'text-center', 'h-[56px]', 'select-none','leading-[56px]', 'w-[200px]', 'cursor-pointer', 'hover:bg-[#FF7300]', 'hover:text-white', 'transition-colors', 'duration-300','nav-Btn']">
+            :class="['rounded-md', 'font-bold', 'pl-4', 'h-[56px]', 'select-none','leading-[56px]', 'w-[200px]', 'cursor-pointer', 'hover:bg-[#FF7300]', 'hover:text-white', 'transition-colors', 'duration-300','nav-Btn']">
                 <a class="block h-full" href="/公佈欄/服務規劃處/話務管理科/班表資料/調代班電子化操作手冊.doc" target="_blank">
                     調代班電子化操作手冊</a></li>                    
 
